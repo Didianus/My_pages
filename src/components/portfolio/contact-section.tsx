@@ -1,44 +1,75 @@
-'use client';
+"use client";
 
-import { useState, FormEvent } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, MapPin, Clock, Github, Linkedin, Twitter, Dribbble, Send, ArrowUpRight } from 'lucide-react';
-import SectionHeading from '@/components/portfolio/section-heading';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/hooks/use-toast';
+import { useState, FormEvent } from "react";
+import { motion } from "framer-motion";
+import {
+  Mail,
+  MapPin,
+  Clock,
+  Github,
+  Linkedin,
+  Twitter,
+  Dribbble,
+  Send,
+  ArrowUpRight,
+} from "lucide-react";
+import SectionHeading from "@/components/portfolio/section-heading";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
+import { cubicBezier } from "framer-motion";
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const contactDetails = [
   {
     icon: Mail,
-    label: 'Email',
-    value: 'paskalisdjeahrus@gmail.com',
-    href: 'mailto:paskalisdjeahrus@gmail.com',
-    color: '#00f5d4',
+    label: "Email",
+    value: "paskalisdjeahrus@gmail.com",
+    href: "mailto:paskalisdjeahrus@gmail.com",
+    color: "#00f5d4",
   },
   {
     icon: MapPin,
-    label: 'Location',
-    value: 'Jakarta, Indonesia',
+    label: "Location",
+    value: "Jakarta, Indonesia",
     href: undefined,
-    color: '#a855f7',
+    color: "#a855f7",
   },
   {
     icon: Clock,
-    label: 'Availability',
-    value: 'Terbuka untuk freelance',
+    label: "Availability",
+    value: "Terbuka untuk freelance",
     href: undefined,
-    color: '#f472b6',
+    color: "#f472b6",
   },
 ];
 
 const socialLinks = [
-  { name: 'GitHub', icon: Github, href: 'https://github.com', color: '#00f5d4' },
-  { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com', color: '#a855f7' },
-  { name: 'Twitter', icon: Twitter, href: 'https://twitter.com', color: '#38bdf8' },
-  { name: 'Dribbble', icon: Dribbble, href: 'https://dribbble.com', color: '#f472b6' },
+  {
+    name: "GitHub",
+    icon: Github,
+    href: "https://github.com",
+    color: "#00f5d4",
+  },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    href: "https://linkedin.com",
+    color: "#a855f7",
+  },
+  {
+    name: "Twitter",
+    icon: Twitter,
+    href: "https://twitter.com",
+    color: "#38bdf8",
+  },
+  {
+    name: "Dribbble",
+    icon: Dribbble,
+    href: "https://dribbble.com",
+    color: "#f472b6",
+  },
 ];
 
 // ── Animation variants ────────────────────────────────────────────────────────
@@ -50,11 +81,14 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 10 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: 'easeOut' },
+    transition: {
+      duration: 0.4,
+      ease: cubicBezier(0.25, 0.46, 0.45, 0.94),
+    },
   },
 };
 
@@ -81,15 +115,15 @@ function SocialIconLink({ social }: { social: (typeof socialLinks)[number] }) {
         animate={{
           boxShadow: hovered
             ? `0 0 20px ${social.color}30, 0 0 40px ${social.color}15`
-            : '0 0 0px transparent',
+            : "0 0 0px transparent",
         }}
         transition={{ duration: 0.3 }}
       />
       <Icon
         className="relative z-10 h-5 w-5 transition-all duration-300"
         style={{
-          color: hovered ? social.color : '#94a3b8',
-          filter: hovered ? `drop-shadow(0 0 6px ${social.color}66)` : 'none',
+          color: hovered ? social.color : "#94a3b8",
+          filter: hovered ? `drop-shadow(0 0 6px ${social.color}66)` : "none",
         }}
       />
     </motion.a>
@@ -109,8 +143,9 @@ export default function ContactSection() {
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: 'Pesan terkirim! ✨',
-        description: 'Terima kasih sudah menghubungi. Saya akan segera membalas!',
+        title: "Pesan terkirim! ✨",
+        description:
+          "Terima kasih sudah menghubungi. Saya akan segera membalas!",
       });
       (e.target as HTMLFormElement).reset();
     }, 800);
@@ -135,19 +170,20 @@ export default function ContactSection() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
+            viewport={{ once: true, margin: "-80px" }}
             className="space-y-8"
           >
             <motion.div variants={itemVariants} className="space-y-4">
               <h3 className="text-2xl font-bold text-white sm:text-3xl">
-                Mari Membangun Sesuatu yang{' '}
+                Mari Membangun Sesuatu yang{" "}
                 <span className="gradient-text">Luar Biasa</span> Bersama
               </h3>
               <p className="text-base leading-relaxed text-slate-400">
-                Saya selalu terbuka untuk mendiskusikan proyek baru, ide kreatif, atau
-                peluang untuk menjadi bagian dari sesuatu yang hebat. Baik Anda
-                membutuhkan developer freelance, ingin berkolaborasi dalam proyek, atau
-                hanya ingin berbicara tentang teknologi terbaru — inbox saya selalu terbuka.
+                Saya selalu terbuka untuk mendiskusikan proyek baru, ide
+                kreatif, atau peluang untuk menjadi bagian dari sesuatu yang
+                hebat. Baik Anda membutuhkan developer freelance, ingin
+                berkolaborasi dalam proyek, atau hanya ingin berbicara tentang
+                teknologi terbaru — inbox saya selalu terbuka.
               </p>
             </motion.div>
 
@@ -156,7 +192,7 @@ export default function ContactSection() {
               {contactDetails.map((detail) => {
                 const Icon = detail.icon;
                 const isLink = !!detail.href;
-                const Wrapper = isLink ? motion.a : 'div';
+                const Wrapper = isLink ? motion.a : "div";
                 const wrapperProps = isLink
                   ? {
                       href: detail.href,
@@ -170,9 +206,7 @@ export default function ContactSection() {
                     key={detail.label}
                     {...wrapperProps}
                     className={`flex items-center gap-4 rounded-xl p-3 -mx-3 transition-all duration-300 ${
-                      isLink
-                        ? 'cursor-hover group hover:bg-white/[0.04]'
-                        : ''
+                      isLink ? "cursor-hover group hover:bg-white/[0.04]" : ""
                     }`}
                   >
                     <div
@@ -182,7 +216,10 @@ export default function ContactSection() {
                         boxShadow: `0 0 20px ${detail.color}15`,
                       }}
                     >
-                      <Icon className="h-5 w-5" style={{ color: detail.color }} />
+                      <Icon
+                        className="h-5 w-5"
+                        style={{ color: detail.color }}
+                      />
                     </div>
                     <div>
                       <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
@@ -217,8 +254,8 @@ export default function ContactSection() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <div className="glass relative rounded-2xl p-6 sm:p-8">
               {/* Decorative gradient line at the top */}
@@ -233,7 +270,10 @@ export default function ContactSection() {
                   transition={{ delay: 0.1, duration: 0.4 }}
                   className="space-y-2"
                 >
-                  <label htmlFor="contact-name" className="text-sm font-medium text-slate-300">
+                  <label
+                    htmlFor="contact-name"
+                    className="text-sm font-medium text-slate-300"
+                  >
                     Nama
                   </label>
                   <Input
@@ -253,7 +293,10 @@ export default function ContactSection() {
                   transition={{ delay: 0.15, duration: 0.4 }}
                   className="space-y-2"
                 >
-                  <label htmlFor="contact-email" className="text-sm font-medium text-slate-300">
+                  <label
+                    htmlFor="contact-email"
+                    className="text-sm font-medium text-slate-300"
+                  >
                     Email
                   </label>
                   <Input
@@ -274,7 +317,10 @@ export default function ContactSection() {
                   transition={{ delay: 0.2, duration: 0.4 }}
                   className="space-y-2"
                 >
-                  <label htmlFor="contact-subject" className="text-sm font-medium text-slate-300">
+                  <label
+                    htmlFor="contact-subject"
+                    className="text-sm font-medium text-slate-300"
+                  >
                     Subjek
                   </label>
                   <Input
@@ -294,7 +340,10 @@ export default function ContactSection() {
                   transition={{ delay: 0.25, duration: 0.4 }}
                   className="space-y-2"
                 >
-                  <label htmlFor="contact-message" className="text-sm font-medium text-slate-300">
+                  <label
+                    htmlFor="contact-message"
+                    className="text-sm font-medium text-slate-300"
+                  >
                     Pesan
                   </label>
                   <Textarea
@@ -319,8 +368,8 @@ export default function ContactSection() {
                     disabled={isSubmitting}
                     className="cursor-hover group relative h-12 w-full overflow-hidden rounded-xl border-0 text-sm font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,245,212,0.3)]"
                     style={{
-                      background: 'linear-gradient(135deg, #00f5d4, #a855f7)',
-                      color: '#050510',
+                      background: "linear-gradient(135deg, #00f5d4, #a855f7)",
+                      color: "#050510",
                     }}
                   >
                     {/* Shimmer overlay on hover */}
@@ -330,7 +379,11 @@ export default function ContactSection() {
                         <>
                           <motion.div
                             animate={{ rotate: 360 }}
-                            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                            transition={{
+                              duration: 1,
+                              repeat: Infinity,
+                              ease: "linear",
+                            }}
                             className="h-4 w-4 rounded-full border-2 border-[#050510]/30 border-t-[#050510]"
                           />
                           Mengirim...

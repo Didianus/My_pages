@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { useState, useRef, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
-import { ExternalLink, Github, X, Layers, ChevronRight } from 'lucide-react';
-import SectionHeading from '@/components/portfolio/section-heading';
+import { useState, useRef, useCallback } from "react";
+import { motion, AnimatePresence, cubicBezier } from "framer-motion";
+import Image from "next/image";
+import { ExternalLink, Github, X, Layers, ChevronRight } from "lucide-react";
+import SectionHeading from "@/components/portfolio/section-heading";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogDescription,
-} from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 interface Project {
   id: number;
@@ -28,47 +28,47 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'NeonCommerce',
-    shortDescription: 'Platform e-commerce dengan rekomendasi AI',
+    title: "NeonCommerce",
+    shortDescription: "Platform e-commerce dengan rekomendasi AI",
     fullDescription:
-      'Platform e-commerce generasi berikutnya yang memanfaatkan kecerdasan buatan untuk memberikan rekomendasi produk yang dipersonalisasi. Dibangun dengan frontend React modern dan server-side rendering Next.js, memiliki pelacakan inventaris real-time, algoritma harga dinamis, dan pengalaman checkout yang mulus. Mesin AI menganalisis pola perilaku pengguna untuk menampilkan produk yang relevan, meningkatkan tingkat konversi hingga 40%.',
-    image: '/project1.png',
-    tags: ['React', 'Next.js', 'AI'],
-    demo: '#',
-    github: '#',
+      "Platform e-commerce generasi berikutnya yang memanfaatkan kecerdasan buatan untuk memberikan rekomendasi produk yang dipersonalisasi. Dibangun dengan frontend React modern dan server-side rendering Next.js, memiliki pelacakan inventaris real-time, algoritma harga dinamis, dan pengalaman checkout yang mulus. Mesin AI menganalisis pola perilaku pengguna untuk menampilkan produk yang relevan, meningkatkan tingkat konversi hingga 40%.",
+    image: "/project1.png",
+    tags: ["React", "Next.js", "AI"],
+    demo: "#",
+    github: "#",
   },
   {
     id: 2,
-    title: 'DataViz Pro',
-    shortDescription: 'Dashboard analitik dengan data real-time',
+    title: "DataViz Pro",
+    shortDescription: "Dashboard analitik dengan data real-time",
     fullDescription:
-      'Dashboard analitik tingkat enterprise yang mengubah dataset kompleks menjadi visualisasi interaktif yang intuitif. Ditenagai D3.js untuk rendering grafik kustom dan koneksi WebSocket untuk streaming data real-time, mendukung widget yang dapat disesuaikan, manajemen tata letak seret-dan-lepas, dan pembuatan laporan otomatis. Dashboard menangani jutaan titik data dengan performa rendering 60fps yang halus.',
-    image: '/project2.png',
-    tags: ['TypeScript', 'D3.js', 'WebSocket'],
-    demo: '#',
-    github: '#',
+      "Dashboard analitik tingkat enterprise yang mengubah dataset kompleks menjadi visualisasi interaktif yang intuitif. Ditenagai D3.js untuk rendering grafik kustom dan koneksi WebSocket untuk streaming data real-time, mendukung widget yang dapat disesuaikan, manajemen tata letak seret-dan-lepas, dan pembuatan laporan otomatis. Dashboard menangani jutaan titik data dengan performa rendering 60fps yang halus.",
+    image: "/project2.png",
+    tags: ["TypeScript", "D3.js", "WebSocket"],
+    demo: "#",
+    github: "#",
   },
   {
     id: 3,
-    title: 'ConnectHub',
-    shortDescription: 'Platform media sosial untuk kreatif',
+    title: "ConnectHub",
+    shortDescription: "Platform media sosial untuk kreatif",
     fullDescription:
-      'Platform media sosial yang dirancang khusus untuk profesional kreatif untuk memamerkan karya mereka, berkolaborasi dalam proyek, dan membangun jaringan profesional. Dibangun dengan React Native untuk dukungan mobile lintas platform dan GraphQL untuk pengambilan data yang efisien, memiliki fitur pesan real-time, showcase portofolio, papan proyek, dan mesin penemuan konten berbasis AI yang membantu kreator menemukan inspirasi dan peluang kolaborasi.',
-    image: '/project3.png',
-    tags: ['React Native', 'GraphQL', 'Node.js'],
-    demo: '#',
-    github: '#',
+      "Platform media sosial yang dirancang khusus untuk profesional kreatif untuk memamerkan karya mereka, berkolaborasi dalam proyek, dan membangun jaringan profesional. Dibangun dengan React Native untuk dukungan mobile lintas platform dan GraphQL untuk pengambilan data yang efisien, memiliki fitur pesan real-time, showcase portofolio, papan proyek, dan mesin penemuan konten berbasis AI yang membantu kreator menemukan inspirasi dan peluang kolaborasi.",
+    image: "/project3.png",
+    tags: ["React Native", "GraphQL", "Node.js"],
+    demo: "#",
+    github: "#",
   },
   {
     id: 4,
-    title: 'StudioFlow',
-    shortDescription: 'Website agensi kreatif dengan efek 3D',
+    title: "StudioFlow",
+    shortDescription: "Website agensi kreatif dengan efek 3D",
     fullDescription:
-      'Website agensi kreatif yang memukau secara visual yang mendorong batas desain web dengan efek 3D imersif dan animasi yang mengalir. Memanfaatkan Three.js untuk rendering WebGL dan GSAP untuk animasi scroll yang terkoreografi, situs ini memiliki showcase produk 3D interaktif, bagian storytelling parallax, dan pengalaman kursor kustom. Bahasa desain memadukan minimalisme dengan pilihan tipografi yang berani dan transisi halaman yang halus.',
-    image: '/project4.png',
-    tags: ['Three.js', 'GSAP', 'Next.js'],
-    demo: '#',
-    github: '#',
+      "Website agensi kreatif yang memukau secara visual yang mendorong batas desain web dengan efek 3D imersif dan animasi yang mengalir. Memanfaatkan Three.js untuk rendering WebGL dan GSAP untuk animasi scroll yang terkoreografi, situs ini memiliki showcase produk 3D interaktif, bagian storytelling parallax, dan pengalaman kursor kustom. Bahasa desain memadukan minimalisme dengan pilihan tipografi yang berani dan transisi halaman yang halus.",
+    image: "/project4.png",
+    tags: ["Three.js", "GSAP", "Next.js"],
+    demo: "#",
+    github: "#",
   },
 ];
 
@@ -91,7 +91,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: cubicBezier(0.25, 0.46, 0.45, 0.94),
     },
   },
 };
@@ -107,18 +107,15 @@ function ProjectCard({
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!cardRef.current) return;
-      const rect = cardRef.current.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      const tiltX = (y - 0.5) * -12;
-      const tiltY = (x - 0.5) * 12;
-      setTilt({ x: tiltX, y: tiltY });
-    },
-    []
-  );
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    const tiltX = (y - 0.5) * -12;
+    const tiltY = (x - 0.5) * 12;
+    setTilt({ x: tiltX, y: tiltY });
+  }, []);
 
   const handleMouseLeave = useCallback(() => {
     setTilt({ x: 0, y: 0 });
@@ -134,7 +131,7 @@ function ProjectCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
       style={{
-        perspective: '1000px',
+        perspective: "1000px",
       }}
     >
       <motion.div
@@ -145,35 +142,34 @@ function ProjectCard({
           scale: isHovered ? 1.02 : 1,
         }}
         transition={{
-          type: 'spring',
+          type: "spring",
           stiffness: 300,
           damping: 20,
         }}
         style={{
-          transformStyle: 'preserve-3d',
+          transformStyle: "preserve-3d",
         }}
       >
         {/* Animated gradient border on hover */}
         <div
           className={`absolute inset-0 rounded-2xl transition-opacity duration-500 ${
-            isHovered ? 'opacity-100' : 'opacity-0'
+            isHovered ? "opacity-100" : "opacity-0"
           }`}
           style={{
             background:
-              'linear-gradient(135deg, rgba(0,245,212,0.3), rgba(168,85,247,0.3))',
-            padding: '1px',
-            WebKitMask:
-              'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-            WebkitMaskComposite: 'xor',
-            maskComposite: 'exclude',
+              "linear-gradient(135deg, rgba(0,245,212,0.3), rgba(168,85,247,0.3))",
+            padding: "1px",
+            WebkitMask:
+              "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+            WebkitMaskComposite: "xor",
+            maskComposite: "exclude",
           }}
         />
-
         {/* Image Section */}
         <div className="relative h-52 sm:h-56 overflow-hidden">
           <motion.div
             animate={{ scale: isHovered ? 1.08 : 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="w-full h-full"
           >
             <Image
@@ -371,11 +367,7 @@ function ProjectModal({
               asChild
               className="cursor-hover flex-1 bg-gradient-to-r from-[#00f5d4] to-[#00f5d4]/80 text-[#050510] font-semibold hover:shadow-[0_0_25px_rgba(0,245,212,0.4)] hover:from-[#00f5d4] hover:to-[#00f5d4] transition-all duration-300 h-11"
             >
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={project.demo} target="_blank" rel="noopener noreferrer">
                 <ExternalLink size={16} />
                 Demo Langsung
               </a>
@@ -424,13 +416,13 @@ export default function ProjectsSection() {
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#a855f7]/[0.03] blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative">
-        <SectionHeading title="Proyek Unggulan" subtitle="// Karya Saya" />
+        <SectionHeading title="Proyek Unggulan" subtitle="// Karya" />
 
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, margin: "-80px" }}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
         >
           {projects.map((project) => (

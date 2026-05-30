@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Briefcase, ArrowRight } from 'lucide-react';
-import SectionHeading from '@/components/portfolio/section-heading';
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Briefcase, ArrowRight } from "lucide-react";
+import SectionHeading from "@/components/portfolio/section-heading";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 interface ExperienceEntry {
@@ -18,45 +18,45 @@ interface ExperienceEntry {
 // ── Data ──────────────────────────────────────────────────────────────────────
 const experiences: ExperienceEntry[] = [
   {
-    period: '2025 - Present',
-    role: 'Teknolog Kreatif Senior',
-    company: 'TechVision Labs',
+    period: "2026 - Present",
+    role: "Teknolog Kreatif Senior",
+    company: "TechVision Labs",
     description:
-      'Memimpin inisiatif teknologi kreatif, membangun pengalaman web imersif dengan alat terdepan.',
+      "Memimpin inisiatif teknologi kreatif, membangun pengalaman web imersif dengan alat terdepan.",
     current: true,
-    accent: '#00f5d4',
+    accent: "#00f5d4",
   },
   {
-    period: '2023 - 2025',
-    role: 'Lead Full-Stack Developer',
-    company: 'DigitalCraft Studio',
+    period: "2025 - 2026",
+    role: "Full-Stack Developer",
+    company: "DigitalCraft Studio",
     description:
-      'Memimpin tim 8 developer, merancang aplikasi web skalabel dan microservice.',
-    accent: '#a855f7',
+      "Memimpin tim 8 developer, merancang aplikasi web skalabel dan microservice.",
+    accent: "#a855f7",
   },
   {
-    period: '2021 - 2023',
-    role: 'Full-Stack Developer',
-    company: 'InnovateTech',
+    period: "2024 - 2025",
+    role: "Full-Stack Developer",
+    company: "InnovateTech",
     description:
-      'Membangun aplikasi web modern menggunakan React, Node.js, dan layanan cloud.',
-    accent: '#f472b6',
+      "Membangun aplikasi web modern menggunakan React, Node.js, dan layanan cloud.",
+    accent: "#f472b6",
   },
   {
-    period: '2019 - 2021',
-    role: 'Frontend Developer',
-    company: 'WebSphere Agency',
+    period: "2023 - 2024",
+    role: "Frontend Developer",
+    company: "WebSphere Agency",
     description:
-      'Mengembangkan UI responsif, mengimplementasikan design system, dan mengoptimalkan performa.',
-    accent: '#38bdf8',
+      "Mengembangkan UI responsif, mengimplementasikan design system, dan mengoptimalkan performa.",
+    accent: "#38bdf8",
   },
   {
-    period: '2017 - 2019',
-    role: 'Junior Developer',
-    company: 'CodeStart',
+    period: "2022 - 2023",
+    role: "Junior Developer",
+    company: "CodeStart",
     description:
-      'Memulai karier profesional, mempelajari praktik pengembangan web modern.',
-    accent: '#00f5d4',
+      "Memulai karier profesional, mempelajari praktik pengembangan web modern.",
+    accent: "#00f5d4",
   },
 ];
 
@@ -73,17 +73,17 @@ function TimelineCard({
   return (
     <div
       className={`relative flex w-full items-start md:items-center ${
-        isLeft ? 'md:flex-row-reverse' : 'md:flex-row'
+        isLeft ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >
       {/* ── Card (positioned to one side) ── */}
       <motion.div
         initial={{ opacity: 0, x: isLeft ? 60 : -60 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: '-60px' }}
-        transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
         className={`ml-14 w-full md:ml-0 md:w-[calc(50%-36px)] ${
-          isLeft ? 'md:mr-auto md:pr-4' : 'md:ml-auto md:pl-4'
+          isLeft ? "md:mr-auto md:pr-4" : "md:ml-auto md:pl-4"
         }`}
       >
         <motion.div
@@ -97,12 +97,12 @@ function TimelineCard({
           <div
             className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
             style={{
-              padding: '1px',
+              padding: "1px",
               background: `linear-gradient(135deg, ${entry.accent}66, ${entry.accent}22, transparent, ${entry.accent}44)`,
               WebkitMask:
-                'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-              WebkitMaskComposite: 'xor',
-              maskComposite: 'exclude',
+                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+              WebkitMaskComposite: "xor",
+              maskComposite: "exclude",
             }}
           />
 
@@ -115,7 +115,7 @@ function TimelineCard({
           {/* Accent bar on the side facing the timeline */}
           <div
             className={`absolute top-0 bottom-0 w-[2px] ${
-              isLeft ? 'left-0 md:right-0 md:left-auto' : 'left-0'
+              isLeft ? "left-0 md:right-0 md:left-auto" : "left-0"
             }`}
             style={{
               background: `linear-gradient(180deg, ${entry.accent}, ${entry.accent}33, transparent)`,
@@ -134,7 +134,12 @@ function TimelineCard({
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 15, delay: 0.3 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 15,
+                    delay: 0.3,
+                  }}
                   className="inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider"
                   style={{
                     background: `${entry.accent}15`,
@@ -158,8 +163,14 @@ function TimelineCard({
 
             {/* Company */}
             <div className="mb-3 flex items-center gap-2">
-              <Briefcase className="h-3.5 w-3.5" style={{ color: entry.accent }} />
-              <span className="text-sm font-medium" style={{ color: entry.accent }}>
+              <Briefcase
+                className="h-3.5 w-3.5"
+                style={{ color: entry.accent }}
+              />
+              <span
+                className="text-sm font-medium"
+                style={{ color: entry.accent }}
+              >
                 {entry.company}
               </span>
             </div>
@@ -172,11 +183,13 @@ function TimelineCard({
             {/* Arrow indicator */}
             <div
               className={`mt-4 flex items-center gap-1 text-xs font-medium opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 ${
-                isLeft ? 'md:flex-row-reverse' : ''
+                isLeft ? "md:flex-row-reverse" : ""
               }`}
               style={{ color: entry.accent }}
             >
-              <ArrowRight className={`h-3 w-3 ${isLeft ? 'md:rotate-180' : ''}`} />
+              <ArrowRight
+                className={`h-3 w-3 ${isLeft ? "md:rotate-180" : ""}`}
+              />
               <span>Selengkapnya</span>
             </div>
           </div>
@@ -212,7 +225,7 @@ function TimelineCard({
             className="absolute h-5 w-5 rounded-full"
             style={{ border: `2px solid ${entry.accent}` }}
             animate={{ scale: [1, 1.8, 1], opacity: [0.6, 0, 0.6] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />
         )}
       </div>
@@ -223,10 +236,14 @@ function TimelineCard({
 // ── Main Component ────────────────────────────────────────────────────────────
 export default function ExperienceSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-80px' });
+  const isInView = useInView(sectionRef, { once: true, margin: "-80px" });
 
   return (
-    <section id="experience" className="relative py-20 md:py-28 overflow-hidden" ref={sectionRef}>
+    <section
+      id="experience"
+      className="relative py-20 md:py-28 overflow-hidden"
+      ref={sectionRef}
+    >
       {/* Background decorations */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-1/3 -left-40 h-80 w-80 rounded-full bg-[#00f5d4]/[0.03] blur-[140px]" />
@@ -244,8 +261,8 @@ export default function ExperienceSection() {
             <motion.div
               className="timeline-glow w-full rounded-full origin-top"
               initial={{ height: 0 }}
-              animate={isInView ? { height: '100%' } : { height: 0 }}
-              transition={{ duration: 1.5, ease: 'easeOut', delay: 0.2 }}
+              animate={isInView ? { height: "100%" } : { height: 0 }}
+              transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
             />
           </div>
 
@@ -270,7 +287,7 @@ export default function ExperienceSection() {
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5, type: 'spring' }}
+            transition={{ duration: 0.5, delay: 0.5, type: "spring" }}
             className="absolute left-4 -bottom-1 z-10 flex h-6 w-6 -translate-x-1/2 items-center justify-center md:left-1/2"
           >
             <div className="h-3 w-3 rotate-45 rounded-sm border border-[#00f5d4]/40 bg-[#0f0f23]" />

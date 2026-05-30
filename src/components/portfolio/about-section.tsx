@@ -1,14 +1,29 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
-import { Briefcase, Award, Users, Calendar, Rocket, Star, Code2, Zap } from 'lucide-react';
-import SectionHeading from '@/components/portfolio/section-heading';
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import {
+  Briefcase,
+  Award,
+  Users,
+  Calendar,
+  Rocket,
+  Star,
+  Code2,
+  Zap,
+} from "lucide-react";
+import SectionHeading from "@/components/portfolio/section-heading";
 
 // ─── Animated Counter ────────────────────────────────────────────────────────
-function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
+function AnimatedCounter({
+  target,
+  suffix = "",
+}: {
+  target: number;
+  suffix?: string;
+}) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-50px' });
+  const inView = useInView(ref, { once: true, margin: "-50px" });
   const motionVal = useMotionValue(0);
   const spring = useSpring(motionVal, { stiffness: 80, damping: 30 });
   const [display, setDisplay] = useState(0);
@@ -20,7 +35,7 @@ function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: str
   }, [inView, motionVal, target]);
 
   useEffect(() => {
-    const unsubscribe = spring.on('change', (v) => {
+    const unsubscribe = spring.on("change", (v) => {
       setDisplay(Math.round(v));
     });
     return unsubscribe;
@@ -38,69 +53,74 @@ function AnimatedCounter({ target, suffix = '' }: { target: number; suffix?: str
 const stats = [
   {
     icon: Briefcase,
-    value: 7,
-    suffix: '+',
-    label: 'Tahun Pengalaman',
-    color: '#00f5d4',
+    value: 2,
+    suffix: "+",
+    label: "Tahun Pengalaman",
+    color: "#00f5d4",
   },
   {
     icon: Rocket,
     value: 50,
-    suffix: '+',
-    label: 'Proyek Selesai',
-    color: '#a855f7',
+    suffix: "+",
+    label: "Proyek Selesai",
+    color: "#a855f7",
   },
   {
     icon: Users,
     value: 30,
-    suffix: '+',
-    label: 'Klien Puas',
-    color: '#f472b6',
+    suffix: "+",
+    label: "Klien Puas",
+    color: "#f472b6",
   },
   {
     icon: Award,
     value: 15,
-    suffix: '+',
-    label: 'Penghargaan',
-    color: '#38bdf8',
+    suffix: "+",
+    label: "Penghargaan",
+    color: "#38bdf8",
   },
 ];
 
 const timeline = [
   {
-    year: '2017',
-    title: 'Memulai sebagai Junior Developer',
-    description: 'Memulai perjalanan menulis kode bersih, mudah dipelihara, dan mempelajari fundamental pengembangan web.',
+    year: "2022",
+    title: "Memulai sebagai Junior Developer",
+    description:
+      "Memulai perjalanan menulis kode bersih, mudah dipelihara, dan mempelajari fundamental pengembangan web.",
     icon: Code2,
-    color: '#00f5d4',
+    color: "#00f5d4",
   },
   {
-    year: '2019',
-    title: 'Full-Stack Developer',
-    description: 'Memperluas keahlian di seluruh stack, memberikan solusi end-to-end untuk berbagai klien.',
+    year: "2023",
+    title: "Full-Stack Developer",
+    description:
+      "Memperluas keahlian di seluruh stack, memberikan solusi end-to-end untuk berbagai klien.",
     icon: Zap,
-    color: '#a855f7',
+    color: "#a855f7",
   },
   {
-    year: '2021',
-    title: 'Lead Developer & Team Lead',
-    description: 'Memimpin tim pengembangan, merancang sistem yang skalabel, dan membimbing developer junior.',
+    year: "2023",
+    title: "Developer",
+    description:
+      "Membangun tim pengembangan, merancang sistem yang skalabel, dan membimbing developer junior.",
     icon: Users,
-    color: '#f472b6',
+    color: "#f472b6",
   },
   {
-    year: '2023',
-    title: 'Developer Kreatif Freelance',
-    description: 'Menjadi independen untuk fokus pada proyek kreatif berdampak tinggi dengan teknologi terdepan.',
+    year: "2023",
+    title: "Developer Kreatif Freelance",
+    description:
+      "Menjadi independen untuk fokus pada proyek kreatif berdampak tinggi dengan teknologi terdepan.",
     icon: Star,
-    color: '#38bdf8',
+    color: "#38bdf8",
   },
   {
-    year: '2025',
-    title: 'Teknolog Kreatif Senior',
-    description: 'Mendorong batas pengalaman web di persimpangan desain dan teknologi.',
+    year: "2025",
+    title: "Teknolog Kreatif",
+    description:
+      "Mendorong batas pengalaman web di persimpangan desain dan teknologi.",
     icon: Rocket,
-    color: '#00f5d4',
+    color: "#00f5d4",
     current: true,
   },
 ];
@@ -125,34 +145,47 @@ export default function AboutSection() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="space-y-6"
           >
             <h3 className="text-2xl font-bold text-white sm:text-3xl">
-              Menciptakan Pengalaman Digital Yang{' '}
+              Menciptakan Pengalaman Digital Yang{" "}
               <span className="gradient-text">Menginspirasi</span>
             </h3>
 
             <p className="text-lg leading-relaxed text-slate-300">
-              Saya Paskalis Didianus Jeharus — seorang full-stack developer yang bersemangat dengan{' '}
-              <span className="font-semibold text-[#00f5d4]">7+ tahun pengalaman</span>{' '}
-              membangun aplikasi web yang indah, berkinerja tinggi, dan memberikan dampak nyata.
+              Saya Paskalis Didianus Jeharus — seorang full-stack developer yang
+              bersemangat dengan{" "}
+              <span className="font-semibold text-[#00f5d4]">
+                2+ tahun pengalaman
+              </span>{" "}
+              membangun aplikasi web yang indah, berkinerja tinggi, dan
+              memberikan dampak nyata.
             </p>
 
             <p className="leading-relaxed text-slate-400">
-              Saya mengkhususkan diri pada <span className="text-white font-medium">React</span>,{' '}
-              <span className="text-white font-medium">Next.js</span>,{' '}
-              <span className="text-white font-medium">TypeScript</span>, dan teknologi web
-              modern. Karya saya berada di persimpangan kode bersih dan desain yang matang —
-              karena perangkat lunak hebat harus terasa sebaik performanya.
+              Saya mengkhususkan diri pada{" "}
+              <span className="text-white font-medium">React</span>,{" "}
+              <span className="text-white font-medium">Next.js</span>,{" "}
+              <span className="text-white font-medium">Php</span>, dan teknologi
+              web modern. Karya saya berada di persimpangan kode bersih dan
+              desain yang matang — karena perangkat lunak hebat harus terasa
+              sebaik performanya.
             </p>
 
             <p className="leading-relaxed text-slate-400">
-              Saya percaya pada <span className="text-[#a855f7] font-medium">kode bersih</span>,{' '}
-              <span className="text-[#f472b6] font-medium">desain yang matang</span>, dan{' '}
-              <span className="text-[#00f5d4] font-medium">pembelajaran berkelanjutan</span>. Setiap
-              proyek adalah kesempatan untuk mendorong batas dan memberikan sesuatu yang luar biasa.
+              Saya percaya pada{" "}
+              <span className="text-[#a855f7] font-medium">kode bersih</span>,{" "}
+              <span className="text-[#f472b6] font-medium">
+                desain yang matang
+              </span>
+              , dan{" "}
+              <span className="text-[#00f5d4] font-medium">
+                pembelajaran berkelanjutan
+              </span>
+              . Setiap proyek adalah kesempatan untuk mendorong batas dan
+              memberikan sesuatu yang luar biasa.
             </p>
 
             <motion.div
@@ -162,16 +195,21 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-wrap gap-3 pt-2"
             >
-              {['React', 'Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Prisma'].map(
-                (tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300 transition-colors hover:border-[#00f5d4]/40 hover:text-[#00f5d4]"
-                  >
-                    {tech}
-                  </span>
-                ),
-              )}
+              {[
+                "React",
+                "Next.js",
+                "php",
+                "Node.js",
+                "Tailwind CSS",
+                "Prisma",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300 transition-colors hover:border-[#00f5d4]/40 hover:text-[#00f5d4]"
+                >
+                  {tech}
+                </span>
+              ))}
             </motion.div>
           </motion.div>
 
@@ -184,8 +222,12 @@ export default function AboutSection() {
                   key={stat.label}
                   initial={{ opacity: 0, y: 30, scale: 0.95 }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true, margin: '-40px' }}
-                  transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.5,
+                    delay: i * 0.1,
+                    ease: "easeOut",
+                  }}
                   whileHover={{
                     scale: 1.04,
                     boxShadow: `0 0 30px ${stat.color}25, 0 0 60px ${stat.color}10`,
@@ -210,7 +252,10 @@ export default function AboutSection() {
                     </div>
 
                     <div className="mb-1 text-3xl font-bold text-white sm:text-4xl">
-                      <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                      <AnimatedCounter
+                        target={stat.value}
+                        suffix={stat.suffix}
+                      />
                     </div>
 
                     <p className="text-xs font-medium text-slate-400 sm:text-sm">
@@ -227,7 +272,7 @@ export default function AboutSection() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
+          viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
           className="mt-24"
         >
@@ -252,14 +297,18 @@ export default function AboutSection() {
                     key={item.year}
                     initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: '-40px' }}
-                    transition={{ duration: 0.5, delay: i * 0.12, ease: 'easeOut' }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{
+                      duration: 0.5,
+                      delay: i * 0.12,
+                      ease: "easeOut",
+                    }}
                     className="relative flex items-start md:items-center"
                   >
                     {/* Dot on the line */}
                     <div
                       className="absolute left-4 z-10 flex h-4 w-4 -translate-x-1/2 items-center justify-center md:left-1/2"
-                      style={{ top: '6px' }}
+                      style={{ top: "6px" }}
                     >
                       <div
                         className="absolute h-4 w-4 rounded-full"
@@ -270,14 +319,14 @@ export default function AboutSection() {
                       />
                       <div
                         className="h-2 w-2 rounded-full bg-white"
-                        style={{ position: 'relative', zIndex: 1 }}
+                        style={{ position: "relative", zIndex: 1 }}
                       />
                     </div>
 
                     {/* Content card */}
                     <div
                       className={`ml-12 w-full md:ml-0 md:w-[calc(50%-32px)] ${
-                        isLeft ? 'md:mr-auto md:pr-0' : 'md:ml-auto md:pl-0'
+                        isLeft ? "md:mr-auto md:pr-0" : "md:ml-auto md:pl-0"
                       }`}
                     >
                       <motion.div
@@ -290,9 +339,11 @@ export default function AboutSection() {
                         {/* Accent line on the card side facing the timeline */}
                         <div
                           className={`absolute top-0 bottom-0 w-[2px] ${
-                            isLeft ? 'right-0 md:left-0' : 'left-0 md:right-0'
+                            isLeft ? "right-0 md:left-0" : "left-0 md:right-0"
                           }`}
-                          style={{ background: `linear-gradient(180deg, ${item.color}, transparent)` }}
+                          style={{
+                            background: `linear-gradient(180deg, ${item.color}, transparent)`,
+                          }}
                         />
 
                         <div className="flex items-start gap-4">
@@ -300,7 +351,10 @@ export default function AboutSection() {
                             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-transform duration-300 group-hover:scale-110"
                             style={{ background: `${item.color}15` }}
                           >
-                            <Icon className="h-5 w-5" style={{ color: item.color }} />
+                            <Icon
+                              className="h-5 w-5"
+                              style={{ color: item.color }}
+                            />
                           </div>
 
                           <div className="min-w-0">
