@@ -80,7 +80,7 @@ const categories: SkillCategory[] = [
 ];
 
 const filterOptions = [
-  { id: 'all', label: 'All', icon: <Layers className="h-4 w-4" /> },
+  { id: 'all', label: 'Semua', icon: <Layers className="h-4 w-4" /> },
   ...categories.map((c) => ({ id: c.id, label: c.label, icon: c.icon })),
 ];
 
@@ -187,7 +187,7 @@ export default function SkillsSection() {
     <section id="skills" className="relative py-20 md:py-28" ref={sectionRef}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ── Heading ── */}
-        <SectionHeading title="Skills & Expertise" subtitle="// What I Do" />
+        <SectionHeading title="Keahlian & Kompetensi" subtitle="// Apa Yang Saya Lakukan" />
 
         {/* ── Filter buttons ── */}
         <motion.div

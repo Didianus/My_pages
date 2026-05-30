@@ -5,13 +5,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Beranda', href: '#home' },
+  { name: 'Tentang', href: '#about' },
+  { name: 'Keahlian', href: '#skills' },
+  { name: 'Proyek', href: '#projects' },
+  { name: 'Pengalaman', href: '#experience' },
+  { name: 'Testimoni', href: '#testimonials' },
+  { name: 'Kontak', href: '#contact' },
 ];
 
 export default function Navbar() {

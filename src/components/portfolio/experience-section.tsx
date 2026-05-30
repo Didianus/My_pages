@@ -19,10 +19,10 @@ interface ExperienceEntry {
 const experiences: ExperienceEntry[] = [
   {
     period: '2025 - Present',
-    role: 'Senior Creative Technologist',
+    role: 'Teknolog Kreatif Senior',
     company: 'TechVision Labs',
     description:
-      'Leading creative technology initiatives, building immersive web experiences with cutting-edge tools.',
+      'Memimpin inisiatif teknologi kreatif, membangun pengalaman web imersif dengan alat terdepan.',
     current: true,
     accent: '#00f5d4',
   },
@@ -31,7 +31,7 @@ const experiences: ExperienceEntry[] = [
     role: 'Lead Full-Stack Developer',
     company: 'DigitalCraft Studio',
     description:
-      'Led a team of 8 developers, architected scalable web applications and microservices.',
+      'Memimpin tim 8 developer, merancang aplikasi web skalabel dan microservice.',
     accent: '#a855f7',
   },
   {
@@ -39,7 +39,7 @@ const experiences: ExperienceEntry[] = [
     role: 'Full-Stack Developer',
     company: 'InnovateTech',
     description:
-      'Built modern web applications using React, Node.js, and cloud services.',
+      'Membangun aplikasi web modern menggunakan React, Node.js, dan layanan cloud.',
     accent: '#f472b6',
   },
   {
@@ -47,7 +47,7 @@ const experiences: ExperienceEntry[] = [
     role: 'Frontend Developer',
     company: 'WebSphere Agency',
     description:
-      'Developed responsive UIs, implemented design systems, and optimized performance.',
+      'Mengembangkan UI responsif, mengimplementasikan design system, dan mengoptimalkan performa.',
     accent: '#38bdf8',
   },
   {
@@ -55,7 +55,7 @@ const experiences: ExperienceEntry[] = [
     role: 'Junior Developer',
     company: 'CodeStart',
     description:
-      'Started professional career, learned modern web development practices.',
+      'Memulai karier profesional, mempelajari praktik pengembangan web modern.',
     accent: '#00f5d4',
   },
 ];
@@ -146,7 +146,7 @@ function TimelineCard({
                     className="inline-block h-1.5 w-1.5 rounded-full animate-pulse"
                     style={{ background: entry.accent }}
                   />
-                  Current
+                  Saat ini
                 </motion.span>
               )}
             </div>
@@ -177,7 +177,7 @@ function TimelineCard({
               style={{ color: entry.accent }}
             >
               <ArrowRight className={`h-3 w-3 ${isLeft ? 'md:rotate-180' : ''}`} />
-              <span>Learn more</span>
+              <span>Selengkapnya</span>
             </div>
           </div>
 
@@ -235,7 +235,7 @@ export default function ExperienceSection() {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* ── Heading ── */}
-        <SectionHeading title="Experience" subtitle="// My Journey" />
+        <SectionHeading title="Pengalaman" subtitle="// Perjalanan Saya" />
 
         {/* ── Timeline ── */}
         <div className="relative mt-8">

@@ -28,7 +28,7 @@ const contactDetails = [
   {
     icon: Clock,
     label: 'Availability',
-    value: 'Open for freelance',
+    value: 'Terbuka untuk freelance',
     href: undefined,
     color: '#f472b6',
   },
@@ -109,8 +109,8 @@ export default function ContactSection() {
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: 'Message sent! ✨',
-        description: "Thanks for reaching out. I'll get back to you soon!",
+        title: 'Pesan terkirim! ✨',
+        description: 'Terima kasih sudah menghubungi. Saya akan segera membalas!',
       });
       (e.target as HTMLFormElement).reset();
     }, 800);
@@ -126,7 +126,7 @@ export default function ContactSection() {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <SectionHeading title="Get In Touch" subtitle="// Let's Connect" />
+        <SectionHeading title="Hubungi Saya" subtitle="// Mari Terhubung" />
 
         {/* Two-column layout */}
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
@@ -140,14 +140,14 @@ export default function ContactSection() {
           >
             <motion.div variants={itemVariants} className="space-y-4">
               <h3 className="text-2xl font-bold text-white sm:text-3xl">
-                Let&apos;s Build Something{' '}
-                <span className="gradient-text">Amazing</span> Together
+                Mari Membangun Sesuatu yang{' '}
+                <span className="gradient-text">Luar Biasa</span> Bersama
               </h3>
               <p className="text-base leading-relaxed text-slate-400">
-                I&apos;m always open to discussing new projects, creative ideas, or
-                opportunities to be part of something great. Whether you need a
-                freelance developer, want to collaborate on a project, or just want
-                to chat about the latest tech — my inbox is always open.
+                Saya selalu terbuka untuk mendiskusikan proyek baru, ide kreatif, atau
+                peluang untuk menjadi bagian dari sesuatu yang hebat. Baik Anda
+                membutuhkan developer freelance, ingin berkolaborasi dalam proyek, atau
+                hanya ingin berbicara tentang teknologi terbaru — inbox saya selalu terbuka.
               </p>
             </motion.div>
 
@@ -203,7 +203,7 @@ export default function ContactSection() {
             {/* Social links */}
             <motion.div variants={itemVariants}>
               <p className="mb-4 text-xs font-medium uppercase tracking-wider text-slate-500">
-                Find me on
+                Temukan saya di
               </p>
               <div className="flex items-center gap-3">
                 {socialLinks.map((social) => (
@@ -234,12 +234,12 @@ export default function ContactSection() {
                   className="space-y-2"
                 >
                   <label htmlFor="contact-name" className="text-sm font-medium text-slate-300">
-                    Name
+                    Nama
                   </label>
                   <Input
                     id="contact-name"
                     name="name"
-                    placeholder="Your name"
+                    placeholder="Nama Anda"
                     required
                     className="h-11 rounded-xl border-white/[0.06] bg-white/[0.03] text-slate-200 placeholder:text-slate-600 transition-all duration-300 focus:border-[#00f5d4]/50 focus:ring-[#00f5d4]/20 focus:ring-[3px] focus-visible:border-[#00f5d4]/50 focus-visible:ring-[#00f5d4]/20 focus-visible:ring-[3px]"
                   />
@@ -260,7 +260,7 @@ export default function ContactSection() {
                     id="contact-email"
                     name="email"
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder="email@anda.com"
                     required
                     className="h-11 rounded-xl border-white/[0.06] bg-white/[0.03] text-slate-200 placeholder:text-slate-600 transition-all duration-300 focus:border-[#00f5d4]/50 focus:ring-[#00f5d4]/20 focus:ring-[3px] focus-visible:border-[#00f5d4]/50 focus-visible:ring-[#00f5d4]/20 focus-visible:ring-[3px]"
                   />
@@ -275,12 +275,12 @@ export default function ContactSection() {
                   className="space-y-2"
                 >
                   <label htmlFor="contact-subject" className="text-sm font-medium text-slate-300">
-                    Subject
+                    Subjek
                   </label>
                   <Input
                     id="contact-subject"
                     name="subject"
-                    placeholder="What's this about?"
+                    placeholder="Tentang apa ini?"
                     required
                     className="h-11 rounded-xl border-white/[0.06] bg-white/[0.03] text-slate-200 placeholder:text-slate-600 transition-all duration-300 focus:border-[#00f5d4]/50 focus:ring-[#00f5d4]/20 focus:ring-[3px] focus-visible:border-[#00f5d4]/50 focus-visible:ring-[#00f5d4]/20 focus-visible:ring-[3px]"
                   />
@@ -295,12 +295,12 @@ export default function ContactSection() {
                   className="space-y-2"
                 >
                   <label htmlFor="contact-message" className="text-sm font-medium text-slate-300">
-                    Message
+                    Pesan
                   </label>
                   <Textarea
                     id="contact-message"
                     name="message"
-                    placeholder="Tell me about your project..."
+                    placeholder="Ceritakan tentang proyek Anda..."
                     required
                     rows={5}
                     className="min-h-[120px] rounded-xl border-white/[0.06] bg-white/[0.03] text-slate-200 placeholder:text-slate-600 transition-all duration-300 focus:border-[#00f5d4]/50 focus:ring-[#00f5d4]/20 focus:ring-[3px] focus-visible:border-[#00f5d4]/50 focus-visible:ring-[#00f5d4]/20 focus-visible:ring-[3px]"
@@ -333,11 +333,11 @@ export default function ContactSection() {
                             transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                             className="h-4 w-4 rounded-full border-2 border-[#050510]/30 border-t-[#050510]"
                           />
-                          Sending...
+                          Mengirim...
                         </>
                       ) : (
                         <>
-                          Send Message
+                          Kirim Pesan
                           <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5" />
                         </>
                       )}

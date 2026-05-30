@@ -297,7 +297,7 @@ function ScrollIndicator() {
       transition={{ delay: 2.5, duration: 1 }}
     >
       <span className="text-xs font-mono tracking-widest text-muted-foreground/60 uppercase">
-        Scroll
+        Gulir
       </span>
       <motion.div
         animate={{ y: [0, 8, 0] }}
@@ -320,7 +320,7 @@ function ScrollIndicator() {
    Main Hero Section
    ──────────────────────────────────────────── */
 export default function HeroSection() {
-  const tagline = 'Crafting Digital Experiences That Inspire';
+  const tagline = 'Menciptakan Pengalaman Digital Yang Menginspirasi';
   const { displayed: typedTagline, done: typewriterDone } = useTypewriter(tagline, 55, 1400);
 
   const handleScrollTo = (id: string) => {
@@ -375,7 +375,7 @@ export default function HeroSection() {
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00f5d4]/20 bg-[#00f5d4]/5 text-sm text-[#00f5d4] font-mono">
                 <Sparkles size={14} />
-                <span>Available for hire</span>
+                <span>Tersedia untuk hire</span>
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00f5d4] opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00f5d4]" />
@@ -389,7 +389,7 @@ export default function HeroSection() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-4"
             >
               <span className="block text-foreground/80 text-lg sm:text-xl md:text-2xl font-medium mb-2">
-                Hello, I&apos;m
+                Halo, Saya
               </span>
               <span className="gradient-text">Paskalis Didianus Jeharus</span>
             </motion.h1>
@@ -399,7 +399,7 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium mb-6"
             >
-              Full-Stack Developer &amp; Creative Designer
+              Full-Stack Developer &amp; Desainer Kreatif
             </motion.p>
 
             {/* Tagline with typewriter */}
@@ -428,9 +428,9 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-base sm:text-lg text-muted-foreground/80 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
-              I transform ideas into elegant, high-performance web applications.
-              With a passion for clean code and stunning design, I build digital
-              products that make a lasting impression.
+              Saya mengubah ide menjadi aplikasi web yang elegan dan berkinerja tinggi.
+              Dengan passion pada kode bersih dan desain memukau, saya membangun produk
+              digital yang meninggalkan kesan mendalam.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -471,7 +471,7 @@ export default function HeroSection() {
               className="flex items-center gap-3 justify-center lg:justify-start"
             >
               <span className="text-sm text-muted-foreground/50 mr-1 hidden sm:inline">
-                Find me on
+                Temukan saya di
               </span>
               <SocialLink
                 href="https://github.com"

@@ -9,30 +9,30 @@ import SectionHeading from '@/components/portfolio/section-heading';
 const testimonials = [
   {
     quote:
-      'Alex is an exceptional developer who brings both technical expertise and creative vision to every project. The results exceeded our expectations.',
+      'Paskalis adalah developer luar biasa yang membawa keahlian teknis dan visi kreatif ke setiap proyek. Hasilnya melampaui ekspektasi kami.',
     author: 'Sarah Chen',
     role: 'CEO @ TechVenture',
     rating: 5,
   },
   {
     quote:
-      "Working with Alex was a game-changer for our digital presence. The attention to detail and innovative solutions were outstanding.",
+      'Bekerja dengan Paskalis menjadi pengubah permainan untuk kehadiran digital kami. Perhatian pada detail dan solusi inovatif sangat luar biasa.',
     author: 'Michael Torres',
     role: 'CTO @ DataFlow',
     rating: 5,
   },
   {
     quote:
-      'The most talented developer I\'ve ever worked with. Alex delivered a product that not only works perfectly but looks absolutely stunning.',
+      'Developer paling berbakat yang pernah saya temui. Paskalis menghasilkan produk yang tidak hanya berfungsi sempurna tapi juga terlihat memukau.',
     author: 'Emma Wilson',
-    role: 'Design Lead @ CreativeHub',
+    role: 'Kepala Desain @ CreativeHub',
     rating: 5,
   },
   {
     quote:
-      "Alex's ability to translate complex ideas into beautiful, functional code is remarkable. A true professional in every sense.",
+      'Kemampuan Paskalis menerjemahkan ide kompleks menjadi kode yang indah dan fungsional sangat luar biasa. Seorang profesional sejati dalam setiap aspek.',
     author: 'David Kim',
-    role: 'Founder @ InnovateLab',
+    role: 'Pendiri @ InnovateLab',
     rating: 5,
   },
 ];
@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
 
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <SectionHeading title="Client Testimonials" subtitle="// What They Say" />
+        <SectionHeading title="Testimoni Klien" subtitle="// Apa Kata Mereka" />
 
         {/* Carousel container */}
         <motion.div

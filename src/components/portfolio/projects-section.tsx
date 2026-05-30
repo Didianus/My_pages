@@ -29,9 +29,9 @@ const projects: Project[] = [
   {
     id: 1,
     title: 'NeonCommerce',
-    shortDescription: 'E-commerce platform with AI recommendations',
+    shortDescription: 'Platform e-commerce dengan rekomendasi AI',
     fullDescription:
-      'A next-generation e-commerce platform that leverages artificial intelligence to deliver personalized product recommendations. Built with a modern React frontend and Next.js server-side rendering, it features real-time inventory tracking, dynamic pricing algorithms, and a seamless checkout experience. The AI engine analyzes user behavior patterns to surface relevant products, increasing conversion rates by 40%.',
+      'Platform e-commerce generasi berikutnya yang memanfaatkan kecerdasan buatan untuk memberikan rekomendasi produk yang dipersonalisasi. Dibangun dengan frontend React modern dan server-side rendering Next.js, memiliki pelacakan inventaris real-time, algoritma harga dinamis, dan pengalaman checkout yang mulus. Mesin AI menganalisis pola perilaku pengguna untuk menampilkan produk yang relevan, meningkatkan tingkat konversi hingga 40%.',
     image: '/project1.png',
     tags: ['React', 'Next.js', 'AI'],
     demo: '#',
@@ -40,9 +40,9 @@ const projects: Project[] = [
   {
     id: 2,
     title: 'DataViz Pro',
-    shortDescription: 'Analytics dashboard with real-time data',
+    shortDescription: 'Dashboard analitik dengan data real-time',
     fullDescription:
-      'An enterprise-grade analytics dashboard that transforms complex datasets into intuitive, interactive visualizations. Powered by D3.js for custom chart rendering and WebSocket connections for real-time data streaming, it supports customizable widgets, drag-and-drop layout management, and automated report generation. The dashboard handles millions of data points with smooth 60fps rendering performance.',
+      'Dashboard analitik tingkat enterprise yang mengubah dataset kompleks menjadi visualisasi interaktif yang intuitif. Ditenagai D3.js untuk rendering grafik kustom dan koneksi WebSocket untuk streaming data real-time, mendukung widget yang dapat disesuaikan, manajemen tata letak seret-dan-lepas, dan pembuatan laporan otomatis. Dashboard menangani jutaan titik data dengan performa rendering 60fps yang halus.',
     image: '/project2.png',
     tags: ['TypeScript', 'D3.js', 'WebSocket'],
     demo: '#',
@@ -51,9 +51,9 @@ const projects: Project[] = [
   {
     id: 3,
     title: 'ConnectHub',
-    shortDescription: 'Social media platform for creatives',
+    shortDescription: 'Platform media sosial untuk kreatif',
     fullDescription:
-      'A vibrant social media platform designed specifically for creative professionals to showcase their work, collaborate on projects, and build their professional network. Built with React Native for cross-platform mobile support and GraphQL for efficient data fetching, it features real-time messaging, portfolio showcases, project boards, and an AI-powered content discovery engine that helps creatives find inspiration and collaboration opportunities.',
+      'Platform media sosial yang dirancang khusus untuk profesional kreatif untuk memamerkan karya mereka, berkolaborasi dalam proyek, dan membangun jaringan profesional. Dibangun dengan React Native untuk dukungan mobile lintas platform dan GraphQL untuk pengambilan data yang efisien, memiliki fitur pesan real-time, showcase portofolio, papan proyek, dan mesin penemuan konten berbasis AI yang membantu kreator menemukan inspirasi dan peluang kolaborasi.',
     image: '/project3.png',
     tags: ['React Native', 'GraphQL', 'Node.js'],
     demo: '#',
@@ -62,9 +62,9 @@ const projects: Project[] = [
   {
     id: 4,
     title: 'StudioFlow',
-    shortDescription: 'Creative agency website with 3D effects',
+    shortDescription: 'Website agensi kreatif dengan efek 3D',
     fullDescription:
-      'A visually stunning creative agency website that pushes the boundaries of web design with immersive 3D effects and fluid animations. Utilizing Three.js for WebGL rendering and GSAP for choreographed scroll animations, the site features interactive 3D product showcases, parallax storytelling sections, and a custom cursor experience. The design language blends minimalism with bold typographic choices and smooth page transitions.',
+      'Website agensi kreatif yang memukau secara visual yang mendorong batas desain web dengan efek 3D imersif dan animasi yang mengalir. Memanfaatkan Three.js untuk rendering WebGL dan GSAP untuk animasi scroll yang terkoreografi, situs ini memiliki showcase produk 3D interaktif, bagian storytelling parallax, dan pengalaman kursor kustom. Bahasa desain memadukan minimalisme dengan pilihan tipografi yang berani dan transisi halaman yang halus.',
     image: '/project4.png',
     tags: ['Three.js', 'GSAP', 'Next.js'],
     demo: '#',
@@ -205,7 +205,7 @@ function ProjectCard({
               }}
               transition={{ duration: 0.3, delay: 0.05 }}
             >
-              View Details
+              Lihat Detail
               <ChevronRight size={16} />
             </motion.button>
 
@@ -236,7 +236,7 @@ function ProjectCard({
                 rel="noopener noreferrer"
               >
                 <Github size={12} />
-                Code
+                Kode
               </a>
             </motion.div>
           </motion.div>
@@ -347,7 +347,7 @@ function ProjectModal({
             <div className="flex items-center gap-2 mb-4">
               <Layers size={16} className="text-[#00f5d4]" />
               <h4 className="text-sm font-semibold uppercase tracking-wider text-[#00f5d4]">
-                Tech Stack
+                Teknologi
               </h4>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -377,7 +377,7 @@ function ProjectModal({
                 rel="noopener noreferrer"
               >
                 <ExternalLink size={16} />
-                Live Demo
+                Demo Langsung
               </a>
             </Button>
             <Button
@@ -391,7 +391,7 @@ function ProjectModal({
                 rel="noopener noreferrer"
               >
                 <Github size={16} />
-                View Source
+                Lihat Kode
               </a>
             </Button>
           </div>
@@ -424,7 +424,7 @@ export default function ProjectsSection() {
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#a855f7]/[0.03] blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative">
-        <SectionHeading title="Featured Projects" subtitle="// My Work" />
+        <SectionHeading title="Proyek Unggulan" subtitle="// Karya Saya" />
 
         <motion.div
           variants={containerVariants}

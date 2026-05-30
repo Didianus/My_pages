@@ -40,28 +40,28 @@ const stats = [
     icon: Briefcase,
     value: 7,
     suffix: '+',
-    label: 'Years Experience',
+    label: 'Tahun Pengalaman',
     color: '#00f5d4',
   },
   {
     icon: Rocket,
     value: 50,
     suffix: '+',
-    label: 'Projects Completed',
+    label: 'Proyek Selesai',
     color: '#a855f7',
   },
   {
     icon: Users,
     value: 30,
     suffix: '+',
-    label: 'Happy Clients',
+    label: 'Klien Puas',
     color: '#f472b6',
   },
   {
     icon: Award,
     value: 15,
     suffix: '+',
-    label: 'Awards Won',
+    label: 'Penghargaan',
     color: '#38bdf8',
   },
 ];
@@ -69,36 +69,36 @@ const stats = [
 const timeline = [
   {
     year: '2017',
-    title: 'Started as Junior Developer',
-    description: 'Began my journey writing clean, maintainable code and learning the fundamentals of web development.',
+    title: 'Memulai sebagai Junior Developer',
+    description: 'Memulai perjalanan menulis kode bersih, mudah dipelihara, dan mempelajari fundamental pengembangan web.',
     icon: Code2,
     color: '#00f5d4',
   },
   {
     year: '2019',
     title: 'Full-Stack Developer',
-    description: 'Expanded my skillset across the entire stack, delivering end-to-end solutions for diverse clients.',
+    description: 'Memperluas keahlian di seluruh stack, memberikan solusi end-to-end untuk berbagai klien.',
     icon: Zap,
     color: '#a855f7',
   },
   {
     year: '2021',
     title: 'Lead Developer & Team Lead',
-    description: 'Led development teams, architected scalable systems, and mentored junior developers.',
+    description: 'Memimpin tim pengembangan, merancang sistem yang skalabel, dan membimbing developer junior.',
     icon: Users,
     color: '#f472b6',
   },
   {
     year: '2023',
-    title: 'Freelance Creative Developer',
-    description: 'Went independent to focus on creative, high-impact projects with cutting-edge technologies.',
+    title: 'Developer Kreatif Freelance',
+    description: 'Menjadi independen untuk fokus pada proyek kreatif berdampak tinggi dengan teknologi terdepan.',
     icon: Star,
     color: '#38bdf8',
   },
   {
     year: '2025',
-    title: 'Senior Creative Technologist',
-    description: 'Pushing the boundaries of web experiences at the intersection of design and technology.',
+    title: 'Teknolog Kreatif Senior',
+    description: 'Mendorong batas pengalaman web di persimpangan desain dan teknologi.',
     icon: Rocket,
     color: '#00f5d4',
     current: true,
@@ -117,7 +117,7 @@ export default function AboutSection() {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <SectionHeading title="About Me" subtitle="// Who I Am" />
+        <SectionHeading title="Tentang Saya" subtitle="// Siapa Saya" />
 
         {/* Two-column layout */}
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
@@ -130,29 +130,29 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <h3 className="text-2xl font-bold text-white sm:text-3xl">
-              Crafting Digital Experiences That{' '}
-              <span className="gradient-text">Inspire</span>
+              Menciptakan Pengalaman Digital Yang{' '}
+              <span className="gradient-text">Menginspirasi</span>
             </h3>
 
             <p className="text-lg leading-relaxed text-slate-300">
-              I&apos;m Paskalis Didianus Jeharus — a passionate full-stack developer with{' '}
-              <span className="font-semibold text-[#00f5d4]">7+ years of experience</span>{' '}
-              building beautiful, performant web applications that make a real difference.
+              Saya Paskalis Didianus Jeharus — seorang full-stack developer yang bersemangat dengan{' '}
+              <span className="font-semibold text-[#00f5d4]">7+ tahun pengalaman</span>{' '}
+              membangun aplikasi web yang indah, berkinerja tinggi, dan memberikan dampak nyata.
             </p>
 
             <p className="leading-relaxed text-slate-400">
-              I specialize in <span className="text-white font-medium">React</span>,{' '}
+              Saya mengkhususkan diri pada <span className="text-white font-medium">React</span>,{' '}
               <span className="text-white font-medium">Next.js</span>,{' '}
-              <span className="text-white font-medium">TypeScript</span>, and modern web
-              technologies. My work sits at the intersection of clean code and thoughtful
-              design — because great software should feel as good as it performs.
+              <span className="text-white font-medium">TypeScript</span>, dan teknologi web
+              modern. Karya saya berada di persimpangan kode bersih dan desain yang matang —
+              karena perangkat lunak hebat harus terasa sebaik performanya.
             </p>
 
             <p className="leading-relaxed text-slate-400">
-              I believe in <span className="text-[#a855f7] font-medium">clean code</span>,{' '}
-              <span className="text-[#f472b6] font-medium">thoughtful design</span>, and{' '}
-              <span className="text-[#00f5d4] font-medium">continuous learning</span>. Every
-              project is an opportunity to push boundaries and deliver something extraordinary.
+              Saya percaya pada <span className="text-[#a855f7] font-medium">kode bersih</span>,{' '}
+              <span className="text-[#f472b6] font-medium">desain yang matang</span>, dan{' '}
+              <span className="text-[#00f5d4] font-medium">pembelajaran berkelanjutan</span>. Setiap
+              proyek adalah kesempatan untuk mendorong batas dan memberikan sesuatu yang luar biasa.
             </p>
 
             <motion.div
@@ -232,7 +232,7 @@ export default function AboutSection() {
           className="mt-24"
         >
           <h3 className="mb-12 text-center text-2xl font-bold text-white sm:text-3xl">
-            Career <span className="gradient-text">Timeline</span>
+            Linimasa <span className="gradient-text">Karier</span>
           </h3>
 
           <div className="relative">
@@ -314,7 +314,7 @@ export default function AboutSection() {
                               </span>
                               {item.current && (
                                 <span className="rounded-full bg-[#00f5d4]/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-[#00f5d4]">
-                                  Current
+                                  Saat ini
                                 </span>
                               )}
                             </div>

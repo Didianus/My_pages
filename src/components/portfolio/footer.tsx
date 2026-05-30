@@ -5,10 +5,10 @@ import { Github, Linkedin, Twitter, Heart, Coffee } from 'lucide-react';
 
 // ── Data ─────────────────────────────────────────────────────────────────────
 const quickLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Beranda', href: '#home' },
+  { name: 'Tentang', href: '#about' },
+  { name: 'Proyek', href: '#projects' },
+  { name: 'Kontak', href: '#contact' },
 ];
 
 const footerSocials = [
@@ -54,7 +54,7 @@ export default function Footer() {
                 <span className="text-2xl font-bold gradient-text">P.J</span>
               </a>
               <p className="mt-2 text-sm text-slate-500">
-                © 2025 Paskalis Didianus Jeharus. All rights reserved.
+                © 2025 Paskalis Didianus Jeharus. Hak cipta dilindungi.
               </p>
             </motion.div>
 
@@ -130,9 +130,9 @@ export default function Footer() {
             className="mt-6 flex flex-col items-center gap-2"
           >
             <p className="text-xs text-slate-600 flex items-center gap-1.5">
-              Built with{' '}
+              Dibangun dengan{' '}
               <Heart className="inline h-3 w-3 text-[#f472b6] fill-[#f472b6]" />{' '}
-              and lots of{' '}
+              dan banyak{' '}
               <Coffee className="inline h-3 w-3 text-[#facc15]" />{' '}
             </p>
           </motion.div>
