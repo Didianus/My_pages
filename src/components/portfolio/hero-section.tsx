@@ -233,7 +233,7 @@ function ProfileImage() {
         <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[360px] lg:h-[360px] rounded-2xl overflow-hidden border border-white/10">
           <Image
             src="/profile.png"
-            alt="Alex Hartono - Full-Stack Developer & Creative Designer"
+            alt="Paskalis Didianus Jeharus - Full-Stack Developer & Creative Designer"
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
             priority
@@ -391,7 +391,7 @@ export default function HeroSection() {
               <span className="block text-foreground/80 text-lg sm:text-xl md:text-2xl font-medium mb-2">
                 Hello, I&apos;m
               </span>
-              <span className="gradient-text">Alex Hartono</span>
+              <span className="gradient-text">Paskalis Didianus Jeharus</span>
             </motion.h1>
 
             {/* Profession */}

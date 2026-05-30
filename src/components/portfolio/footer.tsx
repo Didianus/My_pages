@@ -51,10 +51,10 @@ export default function Footer() {
                 onClick={(e) => handleSmoothScroll(e, '#home')}
                 className="cursor-hover inline-block"
               >
-                <span className="text-2xl font-bold gradient-text">A.H</span>
+                <span className="text-2xl font-bold gradient-text">P.J</span>
               </a>
               <p className="mt-2 text-sm text-slate-500">
-                © 2025 Alex Hartono. All rights reserved.
+                © 2025 Paskalis Didianus Jeharus. All rights reserved.
               </p>
             </motion.div>
 

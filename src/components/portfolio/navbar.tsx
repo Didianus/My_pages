@@ -73,7 +73,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
             >
               <span className="text-2xl font-bold gradient-text">
-                A.H
+                P.J
               </span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#00f5d4] to-[#a855f7] group-hover:w-full transition-all duration-300" />
             </motion.a>

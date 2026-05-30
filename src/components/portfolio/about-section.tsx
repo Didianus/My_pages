@@ -135,7 +135,7 @@ export default function AboutSection() {
             </h3>
 
             <p className="text-lg leading-relaxed text-slate-300">
-              I&apos;m Alex Hartono — a passionate full-stack developer with{' '}
+              I&apos;m Paskalis Didianus Jeharus — a passionate full-stack developer with{' '}
               <span className="font-semibold text-[#00f5d4]">7+ years of experience</span>{' '}
               building beautiful, performant web applications that make a real difference.
             </p>

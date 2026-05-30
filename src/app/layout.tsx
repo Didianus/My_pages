@@ -14,15 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Hartono — Creative Developer & Designer",
-  description: "Premium portfolio of Alex Hartono — Full-Stack Developer, UI/UX Designer, and Creative Technologist crafting digital experiences that inspire.",
+  title: "Paskalis Didianus Jeharus — Creative Developer & Designer",
+  description: "Premium portfolio of Paskalis Didianus Jeharus — Full-Stack Developer, UI/UX Designer, and Creative Technologist crafting digital experiences that inspire.",
   keywords: ["portfolio", "developer", "designer", "creative", "full-stack", "UI/UX", "web development"],
-  authors: [{ name: "Alex Hartono" }],
+  authors: [{ name: "Paskalis Didianus Jeharus" }],
   icons: {
     icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
   openGraph: {
-    title: "Alex Hartono — Creative Developer & Designer",
+    title: "Paskalis Didianus Jeharus — Creative Developer & Designer",
     description: "Crafting digital experiences that inspire and transform.",
     type: "website",
   },

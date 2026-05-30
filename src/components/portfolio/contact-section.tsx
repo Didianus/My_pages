@@ -14,8 +14,8 @@ const contactDetails = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'alex.hartono@email.com',
-    href: 'mailto:alex.hartono@email.com',
+    value: 'paskalisdjeahrus@gmail.com',
+    href: 'mailto:paskalisdjeahrus@gmail.com',
     color: '#00f5d4',
   },
   {
