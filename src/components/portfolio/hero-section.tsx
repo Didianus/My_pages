@@ -411,11 +411,12 @@ export default function HeroSection() {
                 {typedTagline}
                 <motion.span
                   className="inline-block w-[3px] h-[1em] ml-1 bg-[#00f5d4] align-middle"
-                  animate={{ opacity: [1, 0, 1] }}
+                  animate={{ opacity: [1, 1, 0, 0, 1] }}
                   transition={{
                     duration: 0.8,
                     repeat: Infinity,
-                    ease: 'steps(2)',
+                    ease: 'linear',
+                    times: [0, 0.45, 0.5, 0.95, 1],
                     repeatDelay: typewriterDone ? 0 : 9999,
                   }}
                 />
