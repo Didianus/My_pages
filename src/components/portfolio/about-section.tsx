@@ -11,6 +11,7 @@ import {
   Star,
   Code2,
   Zap,
+  GraduationCap,
 } from "lucide-react";
 import SectionHeading from "@/components/portfolio/section-heading";
 
@@ -60,21 +61,21 @@ const stats = [
   },
   {
     icon: Rocket,
-    value: 50,
+    value: 5,
     suffix: "+",
     label: "Proyek Selesai",
     color: "#a855f7",
   },
   {
     icon: Users,
-    value: 30,
+    value: 3,
     suffix: "+",
     label: "Klien Puas",
     color: "#f472b6",
   },
   {
     icon: Award,
-    value: 15,
+    value: 0,
     suffix: "+",
     label: "Penghargaan",
     color: "#38bdf8",
@@ -84,43 +85,18 @@ const stats = [
 const timeline = [
   {
     year: "2022",
-    title: "Memulai sebagai Junior Developer",
-    description:
-      "Memulai perjalanan menulis kode bersih, mudah dipelihara, dan mempelajari fundamental pengembangan web.",
-    icon: Code2,
-    color: "#00f5d4",
-  },
-  {
-    year: "2023",
-    title: "Full-Stack Developer",
-    description:
-      "Memperluas keahlian di seluruh stack, memberikan solusi end-to-end untuk berbagai klien.",
-    icon: Zap,
-    color: "#a855f7",
-  },
-  {
-    year: "2023",
-    title: "Developer",
-    description:
-      "Membangun tim pengembangan, merancang sistem yang skalabel, dan membimbing developer junior.",
-    icon: Users,
-    color: "#f472b6",
-  },
-  {
-    year: "2023",
-    title: "Developer Kreatif Freelance",
-    description:
-      "Menjadi independen untuk fokus pada proyek kreatif berdampak tinggi dengan teknologi terdepan.",
-    icon: Star,
-    color: "#38bdf8",
+    title: "Mulai Kuliah",
+    description: "...",
+    icon: GraduationCap,
+    color: "blue",
+    current: false,
   },
   {
     year: "2025",
-    title: "Teknolog Kreatif",
-    description:
-      "Mendorong batas pengalaman web di persimpangan desain dan teknologi.",
-    icon: Rocket,
-    color: "#00f5d4",
+    title: "Junior Full Stack Developer",
+    description: "...",
+    icon: Briefcase,
+    color: "green",
     current: true,
   },
 ];

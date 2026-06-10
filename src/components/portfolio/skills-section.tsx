@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useRef, useCallback } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { Code, Server, Palette, Wrench, Layers } from 'lucide-react';
-import SectionHeading from '@/components/portfolio/section-heading';
+import { useState, useRef, useCallback } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { Code, Server, Palette, Wrench, Layers } from "lucide-react";
+import SectionHeading from "@/components/portfolio/section-heading";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 interface Skill {
@@ -15,7 +15,7 @@ interface SkillCategory {
   id: string;
   label: string;
   icon: React.ReactNode;
-  accent: string;   // tailwind / css colour string
+  accent: string; // tailwind / css colour string
   accentBg: string; // lighter bg for progress track
   skills: Skill[];
 }
@@ -23,71 +23,77 @@ interface SkillCategory {
 // ── Data ─────────────────────────────────────────────────────────────────────
 const categories: SkillCategory[] = [
   {
-    id: 'frontend',
-    label: 'Frontend',
+    id: "frontend",
+    label: "Frontend",
     icon: <Code className="h-5 w-5" />,
-    accent: '#00f5d4',
-    accentBg: 'rgba(0,245,212,0.12)',
+    accent: "#00f5d4",
+    accentBg: "rgba(0,245,212,0.12)",
     skills: [
-      { name: 'React', level: 95 },
-      { name: 'Next.js', level: 92 },
-      { name: 'TypeScript', level: 90 },
-      { name: 'Tailwind CSS', level: 95 },
-      { name: 'Vue.js', level: 78 },
+      { name: "React", level: 10 },
+      { name: "Next.js", level: 50 },
+      { name: "TypeScript", level: 50 },
+      { name: "Tailwind CSS", level: 50 },
+      { name: "Vue.js", level: 10 },
     ],
   },
   {
-    id: 'backend',
-    label: 'Backend',
+    id: "backend",
+    label: "Backend",
     icon: <Server className="h-5 w-5" />,
-    accent: '#a855f7',
-    accentBg: 'rgba(168,85,247,0.12)',
+    accent: "#a855f7",
+    accentBg: "rgba(168,85,247,0.12)",
     skills: [
-      { name: 'Node.js', level: 88 },
-      { name: 'Python', level: 82 },
-      { name: 'PostgreSQL', level: 85 },
-      { name: 'MongoDB', level: 80 },
-      { name: 'GraphQL', level: 75 },
+      { name: "Node.js", level: 50 },
+      { name: "Python", level: 50 },
+      { name: "PostgreSQL", level: 50 },
+      { name: "MongoDB", level: 50 },
+      { name: "GraphQL", level: 50 },
     ],
   },
   {
-    id: 'uiux',
-    label: 'UI/UX',
+    id: "uiux",
+    label: "UI/UX",
     icon: <Palette className="h-5 w-5" />,
-    accent: '#f472b6',
-    accentBg: 'rgba(244,114,182,0.12)',
+    accent: "#f472b6",
+    accentBg: "rgba(244,114,182,0.12)",
     skills: [
-      { name: 'Figma', level: 90 },
-      { name: 'Adobe XD', level: 75 },
-      { name: 'Prototyping', level: 85 },
-      { name: 'Design Systems', level: 88 },
+      { name: "Figma", level: 50 },
+      { name: "Adobe XD", level: 50 },
+      { name: "Prototyping", level: 50 },
+      { name: "Design Systems", level: 50 },
     ],
   },
   {
-    id: 'tools',
-    label: 'Tools & AI',
+    id: "tools",
+    label: "Tools & AI",
     icon: <Wrench className="h-5 w-5" />,
-    accent: '#38bdf8',
-    accentBg: 'rgba(56,189,248,0.12)',
+    accent: "#38bdf8",
+    accentBg: "rgba(56,189,248,0.12)",
     skills: [
-      { name: 'Git', level: 95 },
-      { name: 'Docker', level: 80 },
-      { name: 'AWS', level: 75 },
-      { name: 'AI/ML', level: 70 },
-      { name: 'CI/CD', level: 85 },
+      { name: "Git", level: 50 },
+      { name: "Docker", level: 50 },
+      { name: "AWS", level: 50 },
+      { name: "AI/ML", level: 50 },
+      { name: "CI/CD", level: 50 },
     ],
   },
 ];
 
 const filterOptions = [
-  { id: 'all', label: 'Semua', icon: <Layers className="h-4 w-4" /> },
+  { id: "all", label: "Semua", icon: <Layers className="h-4 w-4" /> },
   ...categories.map((c) => ({ id: c.id, label: c.label, icon: c.icon })),
 ];
 
 // ── Sub-components ───────────────────────────────────────────────────────────
 
 /** 3-D tilt wrapper – applies perspective tilt on mouse move */
-function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
+function TiltCard({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
@@ -106,7 +112,8 @@ function TiltCard({ children, className }: { children: React.ReactNode; classNam
   const handleMouseLeave = useCallback(() => {
     const card = cardRef.current;
     if (!card) return;
-    card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    card.style.transform =
+      "perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)";
   }, []);
 
   return (
@@ -114,8 +121,8 @@ function TiltCard({ children, className }: { children: React.ReactNode; classNam
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`transition-transform duration-300 ease-out ${className ?? ''}`}
-      style={{ willChange: 'transform' }}
+      className={`transition-transform duration-300 ease-out ${className ?? ""}`}
+      style={{ willChange: "transform" }}
     >
       {children}
     </div>
@@ -149,7 +156,7 @@ function SkillBar({
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: 0.4 + index * 0.08, duration: 0.3 }}
         >
-          {isInView ? `${level}%` : ''}
+          {isInView ? `${level}%` : ""}
         </motion.span>
       </div>
       {/* Track */}
@@ -166,7 +173,11 @@ function SkillBar({
           }}
           initial={{ width: 0 }}
           animate={isInView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1, delay: 0.3 + index * 0.08, ease: 'easeOut' }}
+          transition={{
+            duration: 1,
+            delay: 0.3 + index * 0.08,
+            ease: "easeOut",
+          }}
         />
       </div>
     </div>
@@ -176,18 +187,23 @@ function SkillBar({
 // ── Main component ───────────────────────────────────────────────────────────
 
 export default function SkillsSection() {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState("all");
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
+  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   const visibleCategories =
-    activeFilter === 'all' ? categories : categories.filter((c) => c.id === activeFilter);
+    activeFilter === "all"
+      ? categories
+      : categories.filter((c) => c.id === activeFilter);
 
   return (
     <section id="skills" className="relative py-20 md:py-28" ref={sectionRef}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ── Heading ── */}
-        <SectionHeading title="Keahlian & Kompetensi" subtitle="// Apa Yang Saya Lakukan" />
+        <SectionHeading
+          title="Keahlian & Kompetensi"
+          subtitle="// Apa Yang Saya Lakukan"
+        />
 
         {/* ── Filter buttons ── */}
         <motion.div
@@ -205,8 +221,8 @@ export default function SkillsSection() {
                 onClick={() => setActiveFilter(opt.id)}
                 className={`cursor-hover group relative flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
                   isActive
-                    ? 'bg-white/10 text-white shadow-lg'
-                    : 'bg-white/[0.04] text-gray-400 hover:bg-white/[0.08] hover:text-gray-200'
+                    ? "bg-white/10 text-white shadow-lg"
+                    : "bg-white/[0.04] text-gray-400 hover:bg-white/[0.08] hover:text-gray-200"
                 }`}
               >
                 {/* Active glow ring */}
@@ -214,8 +230,8 @@ export default function SkillsSection() {
                   <motion.div
                     layoutId="skills-filter-glow"
                     className="absolute inset-0 rounded-full border border-[#00f5d4]/40"
-                    style={{ boxShadow: '0 0 16px rgba(0,245,212,0.25)' }}
-                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                    style={{ boxShadow: "0 0 16px rgba(0,245,212,0.25)" }}
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
                 <span className="relative z-10 flex items-center gap-2">
@@ -250,7 +266,7 @@ export default function SkillsSection() {
                     opacity: 1,
                     y: 0,
                     scale: 1,
-                    transition: { duration: 0.5, ease: 'easeOut' },
+                    transition: { duration: 0.5, ease: "easeOut" },
                   },
                 }}
               >
@@ -258,19 +274,20 @@ export default function SkillsSection() {
                   <div
                     className="group relative h-full rounded-2xl border border-white/[0.06] bg-[#0f0f23]/80 p-6 backdrop-blur-md transition-all duration-300 hover:border-transparent hover:shadow-[0_0_30px_rgba(0,245,212,0.08)]"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(15,15,35,0.9), rgba(15,15,35,0.6))',
+                      background:
+                        "linear-gradient(135deg, rgba(15,15,35,0.9), rgba(15,15,35,0.6))",
                     }}
                   >
                     {/* Gradient border overlay on hover */}
                     <div
                       className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                       style={{
-                        padding: '1px',
+                        padding: "1px",
                         background: `linear-gradient(135deg, ${cat.accent}66, ${cat.accent}22, transparent, ${cat.accent}44)`,
                         WebkitMask:
-                          'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                        WebkitMaskComposite: 'xor',
-                        maskComposite: 'exclude',
+                          "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                        WebkitMaskComposite: "xor",
+                        maskComposite: "exclude",
                       }}
                     />
 
@@ -292,7 +309,9 @@ export default function SkillsSection() {
                       >
                         {cat.icon}
                       </div>
-                      <h3 className="text-lg font-semibold text-white">{cat.label}</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        {cat.label}
+                      </h3>
                     </div>
 
                     {/* ── Skill bars ── */}

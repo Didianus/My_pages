@@ -18,17 +18,8 @@ interface ExperienceEntry {
 // ── Data ──────────────────────────────────────────────────────────────────────
 const experiences: ExperienceEntry[] = [
   {
-    period: "2026 - Present",
-    role: "Teknolog Kreatif Senior",
-    company: "TechVision Labs",
-    description:
-      "Memimpin inisiatif teknologi kreatif, membangun pengalaman web imersif dengan alat terdepan.",
-    current: true,
-    accent: "#00f5d4",
-  },
-  {
     period: "2025 - 2026",
-    role: "Full-Stack Developer",
+    role: "Junior Full-Stack Developer",
     company: "DigitalCraft Studio",
     description:
       "Memimpin tim 8 developer, merancang aplikasi web skalabel dan microservice.",
@@ -36,27 +27,11 @@ const experiences: ExperienceEntry[] = [
   },
   {
     period: "2024 - 2025",
-    role: "Full-Stack Developer",
+    role: "Tahap Belajar Full-Stack Developer",
     company: "InnovateTech",
     description:
       "Membangun aplikasi web modern menggunakan React, Node.js, dan layanan cloud.",
     accent: "#f472b6",
-  },
-  {
-    period: "2023 - 2024",
-    role: "Frontend Developer",
-    company: "WebSphere Agency",
-    description:
-      "Mengembangkan UI responsif, mengimplementasikan design system, dan mengoptimalkan performa.",
-    accent: "#38bdf8",
-  },
-  {
-    period: "2022 - 2023",
-    role: "Junior Developer",
-    company: "CodeStart",
-    description:
-      "Memulai karier profesional, mempelajari praktik pengembangan web modern.",
-    accent: "#00f5d4",
   },
 ];
 
