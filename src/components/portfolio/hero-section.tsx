@@ -1,16 +1,24 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, ChevronDown, ArrowRight, Sparkles } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+import { useState, useEffect, useCallback, useRef } from "react";
+import { motion } from "framer-motion";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  ChevronDown,
+  ArrowRight,
+  Sparkles,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import type { Variants, Easing } from "framer-motion";
 
 /* ────────────────────────────────────────────
    Typewriter hook
    ──────────────────────────────────────────── */
 function useTypewriter(text: string, speed = 60, startDelay = 1200) {
-  const [displayed, setDisplayed] = useState('');
+  const [displayed, setDisplayed] = useState("");
   const [done, setDone] = useState(false);
 
   useEffect(() => {
@@ -73,7 +81,7 @@ function FloatingOrb({
         duration,
         delay,
         repeat: Infinity,
-        ease: 'easeInOut',
+        ease: "easeInOut",
       }}
     />
   );
@@ -90,7 +98,7 @@ function GradientMeshBackground() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0,245,212,0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 80% 20%, rgba(168,85,247,0.08) 0%, transparent 60%), radial-gradient(ellipse 70% 50% at 50% 80%, rgba(244,114,182,0.06) 0%, transparent 50%)',
+            "radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0,245,212,0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 80% 20%, rgba(168,85,247,0.08) 0%, transparent 60%), radial-gradient(ellipse 70% 50% at 50% 80%, rgba(244,114,182,0.06) 0%, transparent 50%)",
         }}
       />
 
@@ -98,53 +106,66 @@ function GradientMeshBackground() {
       <motion.div
         className="absolute"
         style={{
-          width: '60vw',
-          height: '60vw',
-          top: '-20%',
-          left: '-10%',
-          background: 'radial-gradient(circle, rgba(0,245,212,0.07) 0%, transparent 70%)',
-          borderRadius: '50%',
+          width: "60vw",
+          height: "60vw",
+          top: "-20%",
+          left: "-10%",
+          background:
+            "radial-gradient(circle, rgba(0,245,212,0.07) 0%, transparent 70%)",
+          borderRadius: "50%",
         }}
         animate={{
           x: [0, 40, -20, 0],
           y: [0, -30, 20, 0],
           scale: [1, 1.1, 0.95, 1],
         }}
-        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         className="absolute"
         style={{
-          width: '50vw',
-          height: '50vw',
-          bottom: '-15%',
-          right: '-10%',
-          background: 'radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%)',
-          borderRadius: '50%',
+          width: "50vw",
+          height: "50vw",
+          bottom: "-15%",
+          right: "-10%",
+          background:
+            "radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%)",
+          borderRadius: "50%",
         }}
         animate={{
           x: [0, -30, 20, 0],
           y: [0, 20, -30, 0],
           scale: [1, 0.95, 1.1, 1],
         }}
-        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        transition={{
+          duration: 22,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
       />
       <motion.div
         className="absolute"
         style={{
-          width: '40vw',
-          height: '40vw',
-          top: '30%',
-          right: '20%',
-          background: 'radial-gradient(circle, rgba(244,114,182,0.05) 0%, transparent 70%)',
-          borderRadius: '50%',
+          width: "40vw",
+          height: "40vw",
+          top: "30%",
+          right: "20%",
+          background:
+            "radial-gradient(circle, rgba(244,114,182,0.05) 0%, transparent 70%)",
+          borderRadius: "50%",
         }}
         animate={{
           x: [0, 25, -15, 0],
           y: [0, -20, 25, 0],
           scale: [1, 1.05, 0.9, 1],
         }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 4,
+        }}
       />
 
       {/* Grid pattern overlay */}
@@ -152,8 +173,8 @@ function GradientMeshBackground() {
         className="absolute inset-0 opacity-[0.03]"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
+            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
         }}
       />
     </div>
@@ -192,16 +213,16 @@ function ProfileImage() {
       onMouseLeave={handleMouseLeave}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-      style={{ perspective: '1000px' }}
+      transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+      style={{ perspective: "1000px" }}
     >
       <motion.div
         animate={{
           rotateX: tilt.x,
           rotateY: tilt.y,
         }}
-        transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-        style={{ transformStyle: 'preserve-3d' }}
+        transition={{ type: "spring", stiffness: 200, damping: 20 }}
+        style={{ transformStyle: "preserve-3d" }}
         className="relative"
       >
         {/* Animated glow ring */}
@@ -209,9 +230,9 @@ function ProfileImage() {
           className="absolute -inset-1 rounded-2xl opacity-70 blur-md transition-opacity duration-500 group-hover:opacity-100"
           style={{
             background:
-              'linear-gradient(135deg, #00f5d4, #a855f7, #f472b6, #00f5d4)',
-            backgroundSize: '300% 300%',
-            animation: 'gradient-rotate 4s ease infinite',
+              "linear-gradient(135deg, #00f5d4, #a855f7, #f472b6, #00f5d4)",
+            backgroundSize: "300% 300%",
+            animation: "gradient-rotate 4s ease infinite",
           }}
         />
 
@@ -220,13 +241,13 @@ function ProfileImage() {
           className="absolute -inset-4 rounded-3xl"
           style={{
             background:
-              'linear-gradient(135deg, rgba(0,245,212,0.15), rgba(168,85,247,0.15))',
+              "linear-gradient(135deg, rgba(0,245,212,0.15), rgba(168,85,247,0.15))",
           }}
           animate={{
             opacity: isHovering ? [0.3, 0.6, 0.3] : [0.15, 0.25, 0.15],
             scale: isHovering ? [1, 1.02, 1] : [1, 1.01, 1],
           }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         />
 
         {/* Image container */}
@@ -301,7 +322,7 @@ function ScrollIndicator() {
       </span>
       <motion.div
         animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
       >
         <ChevronDown size={20} className="text-[#00f5d4]/60" />
       </motion.div>
@@ -309,7 +330,7 @@ function ScrollIndicator() {
         <motion.div
           className="w-1 h-1.5 rounded-full bg-[#00f5d4]"
           animate={{ y: [0, 8, 0], opacity: [1, 0.3, 1] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
     </motion.div>
@@ -320,29 +341,43 @@ function ScrollIndicator() {
    Main Hero Section
    ──────────────────────────────────────────── */
 export default function HeroSection() {
-  const tagline = 'Menciptakan Pengalaman Digital Yang Menginspirasi';
-  const { displayed: typedTagline, done: typewriterDone } = useTypewriter(tagline, 55, 1400);
+  const tagline = "Menciptakan Pengalaman Digital Yang Menginspirasi";
+  const { displayed: typedTagline, done: typewriterDone } = useTypewriter(
+    tagline,
+    55,
+    1400,
+  );
 
   const handleScrollTo = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   // Stagger animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
+  const containerVariants: Variants = {
+    hidden: {
+      opacity: 0,
+    },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.3 },
+      transition: {
+        staggerChildren: 0.15,
+      },
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+  const itemVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
     },
   };
 
@@ -355,11 +390,46 @@ export default function HeroSection() {
       <GradientMeshBackground />
 
       {/* Floating orbs */}
-      <FloatingOrb color="#00f5d4" size={120} top="10%" left="5%" delay={0} duration={12} />
-      <FloatingOrb color="#a855f7" size={90} top="60%" left="85%" delay={2} duration={14} />
-      <FloatingOrb color="#f472b6" size={70} top="75%" left="15%" delay={4} duration={16} />
-      <FloatingOrb color="#38bdf8" size={100} top="20%" left="70%" delay={1} duration={13} />
-      <FloatingOrb color="#00f5d4" size={60} top="85%" left="60%" delay={3} duration={15} />
+      <FloatingOrb
+        color="#00f5d4"
+        size={120}
+        top="10%"
+        left="5%"
+        delay={0}
+        duration={12}
+      />
+      <FloatingOrb
+        color="#a855f7"
+        size={90}
+        top="60%"
+        left="85%"
+        delay={2}
+        duration={14}
+      />
+      <FloatingOrb
+        color="#f472b6"
+        size={70}
+        top="75%"
+        left="15%"
+        delay={4}
+        duration={16}
+      />
+      <FloatingOrb
+        color="#38bdf8"
+        size={100}
+        top="20%"
+        left="70%"
+        delay={1}
+        duration={13}
+      />
+      <FloatingOrb
+        color="#00f5d4"
+        size={60}
+        top="85%"
+        left="60%"
+        delay={3}
+        duration={15}
+      />
 
       {/* Main content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-0">
@@ -372,7 +442,10 @@ export default function HeroSection() {
             animate="visible"
           >
             {/* Greeting badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 mb-6">
+            <motion.div
+              variants={itemVariants}
+              className="inline-flex items-center gap-2 mb-6"
+            >
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00f5d4]/20 bg-[#00f5d4]/5 text-sm text-[#00f5d4] font-mono">
                 <Sparkles size={14} />
                 <span>Tersedia untuk hire</span>
@@ -399,14 +472,11 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium mb-6"
             >
-              Full-Stack Developer &amp; Desainer Kreatif
+              Full-Stack Developer
             </motion.p>
 
             {/* Tagline with typewriter */}
-            <motion.div
-              variants={itemVariants}
-              className="mb-6 min-h-[2rem]"
-            >
+            <motion.div variants={itemVariants} className="mb-6 min-h-[2rem]">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground/90">
                 {typedTagline}
                 <motion.span
@@ -415,7 +485,7 @@ export default function HeroSection() {
                   transition={{
                     duration: 0.8,
                     repeat: Infinity,
-                    ease: 'linear',
+                    ease: "linear",
                     times: [0, 0.45, 0.5, 0.95, 1],
                     repeatDelay: typewriterDone ? 0 : 9999,
                   }}
@@ -428,9 +498,9 @@ export default function HeroSection() {
               variants={itemVariants}
               className="text-base sm:text-lg text-muted-foreground/80 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed"
             >
-              Saya mengubah ide menjadi aplikasi web yang elegan dan berkinerja tinggi.
-              Dengan passion pada kode bersih dan desain memukau, saya membangun produk
-              digital yang meninggalkan kesan mendalam.
+              Saya mengubah ide menjadi aplikasi web yang elegan dan berkinerja
+              tinggi. Dengan passion pada kode bersih dan desain memukau, saya
+              membangun produk digital yang meninggalkan kesan mendalam.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -439,7 +509,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10"
             >
               <Button
-                onClick={() => handleScrollTo('projects')}
+                onClick={() => handleScrollTo("projects")}
                 size="lg"
                 className="cursor-hover group relative overflow-hidden bg-[#00f5d4] text-[#050510] hover:bg-[#00f5d4]/90 font-semibold text-base px-8 h-12 rounded-xl neon-cyan transition-all duration-300"
               >
@@ -455,7 +525,7 @@ export default function HeroSection() {
               </Button>
 
               <Button
-                onClick={() => handleScrollTo('contact')}
+                onClick={() => handleScrollTo("contact")}
                 size="lg"
                 variant="outline"
                 className="cursor-hover group relative overflow-hidden border-[#a855f7]/30 text-[#a855f7] hover:bg-[#a855f7]/10 hover:border-[#a855f7]/50 font-semibold text-base px-8 h-12 rounded-xl transition-all duration-300"
