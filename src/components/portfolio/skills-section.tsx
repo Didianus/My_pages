@@ -44,10 +44,10 @@ const categories: SkillCategory[] = [
     accentBg: "rgba(168,85,247,0.12)",
     skills: [
       { name: "Node.js", level: 50 },
-      { name: "Python", level: 50 },
-      { name: "PostgreSQL", level: 50 },
-      { name: "MongoDB", level: 50 },
-      { name: "GraphQL", level: 50 },
+      { name: "Python", level: 10 },
+      { name: "PostgreSQL", level: 10 },
+      { name: "MongoDB", level: 10 },
+      { name: "PHP", level: 50 },
     ],
   },
   {
@@ -58,9 +58,9 @@ const categories: SkillCategory[] = [
     accentBg: "rgba(244,114,182,0.12)",
     skills: [
       { name: "Figma", level: 50 },
-      { name: "Adobe XD", level: 50 },
-      { name: "Prototyping", level: 50 },
-      { name: "Design Systems", level: 50 },
+      { name: "Adobe XD", level: 10 },
+      { name: "Prototyping", level: 10 },
+      { name: "Design Systems", level: 10 },
     ],
   },
   {
@@ -71,10 +71,10 @@ const categories: SkillCategory[] = [
     accentBg: "rgba(56,189,248,0.12)",
     skills: [
       { name: "Git", level: 50 },
-      { name: "Docker", level: 50 },
-      { name: "AWS", level: 50 },
-      { name: "AI/ML", level: 50 },
-      { name: "CI/CD", level: 50 },
+      { name: "Docker", level: 10 },
+      { name: "AWS", level: 10 },
+      { name: "AI/ML", level: 10 },
+      { name: "CI/CD", level: 10 },
     ],
   },
 ];

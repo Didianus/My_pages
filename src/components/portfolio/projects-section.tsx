@@ -29,9 +29,9 @@ const projects: Project[] = [
   {
     id: 1,
     title: "Website Rumah Yoga",
-    shortDescription: "Platform e-commerce dengan rekomendasi AI",
+    shortDescription: "Website Rumah Yoga dengan rekomendasi AI",
     fullDescription:
-      "Platform e-commerce generasi berikutnya yang memanfaatkan kecerdasan buatan untuk memberikan rekomendasi produk yang dipersonalisasi. Dibangun dengan frontend React modern dan server-side rendering Next.js, memiliki pelacakan inventaris real-time, algoritma harga dinamis, dan pengalaman checkout yang mulus. Mesin AI menganalisis pola perilaku pengguna untuk menampilkan produk yang relevan, meningkatkan tingkat konversi hingga 40%.",
+      "Rumah Yoga hadir sebagai ruang inspiratif untuk relaksasi, kebugaran, dan mindfulness melalui berbagai program yoga yang cocok untuk semua kalangan. Dengan desain yang menenangkan dan navigasi yang mudah, situs ini memudahkan pengunjung untuk menemukan kelas, workshop, dan acara yang sesuai dengan kebutuhan mereka. Fitur rekomendasi berbasis AI memberikan pengalaman personalisasi, membantu pengguna menemukan program yoga yang paling cocok untuk mereka berdasarkan preferensi dan tujuan kesehatan mereka. Rumah Yoga bertujuan untuk menjadi sumber utama bagi siapa saja yang ingin meningkatkan kesejahteraan fisik dan mental melalui praktik yoga.",
     image: "/rumahyoga.png",
     tags: ["Full Stack"],
     demo: "https://rumahyoga.vercel.app/",
@@ -42,7 +42,7 @@ const projects: Project[] = [
     title: "Dir Wallet",
     shortDescription: "Dashboard analitik dengan data real-time",
     fullDescription:
-      "Dashboard analitik tingkat enterprise yang mengubah dataset kompleks menjadi visualisasi interaktif yang intuitif. Ditenagai D3.js untuk rendering grafik kustom dan koneksi WebSocket untuk streaming data real-time, mendukung widget yang dapat disesuaikan, manajemen tata letak seret-dan-lepas, dan pembuatan laporan otomatis. Dashboard menangani jutaan titik data dengan performa rendering 60fps yang halus.",
+      "Dir-Wallet merupakan sistem berbasis web yang dirancang untuk merekam dan mengelola data transaksi keuangan, sehingga pengguna dapat memantau riwayat transaksi dan laporan saldo secara real-time. Sistem ini menyediakan fitur-fitur seperti pencatatan transaksi masuk dan keluar, kategori pengeluaran, serta laporan keuangan yang mudah dipahami. Dengan tampilan yang user-friendly, Dir-Wallet memudahkan pengguna dalam mengelola keuangan mereka dengan lebih efisien dan terorganisir. Sistem ini juga dapat diakses melalui berbagai perangkat, memungkinkan pengguna untuk tetap terhubung dengan keuangan mereka kapan saja dan di mana saja. Dir-Wallet bertujuan untuk membantu pengguna dalam mencapai tujuan keuangan mereka dengan memberikan alat yang efektif untuk mengelola dan memantau keuangan pribadi mereka.",
     image: "/ewallet.png",
     tags: ["Full Stack"],
     demo: "https://dirwallet.vercel.app/",
@@ -53,7 +53,7 @@ const projects: Project[] = [
     title: "Website Desa Lidi",
     shortDescription: "Platform media sosial untuk kreatif",
     fullDescription:
-      "Platform media sosial yang dirancang khusus untuk profesional kreatif untuk memamerkan karya mereka, berkolaborasi dalam proyek, dan membangun jaringan profesional. Dibangun dengan React Native untuk dukungan mobile lintas platform dan GraphQL untuk pengambilan data yang efisien, memiliki fitur pesan real-time, showcase portofolio, papan proyek, dan mesin penemuan konten berbasis AI yang membantu kreator menemukan inspirasi dan peluang kolaborasi.",
+      "Website Desa dikembangkan untuk mendukung digitalisasi layanan pemerintahan desa dengan menyediakan informasi publik, berita, agenda kegiatan, serta layanan administrasi secara online. Situs ini dirancang dengan fokus pada kemudahan akses dan interaksi, memungkinkan warga desa untuk tetap terhubung dengan perkembangan desa mereka serta mempermudah komunikasi antara kepala desa dan masyarakat. Dengan fitur-fitur yang user-friendly, website ini bertujuan untuk meningkatkan transparansi, partisipasi masyarakat, dan efisiensi dalam pengelolaan administrasi desa.",
     image: "/desalidi.png",
     tags: ["Full Stack"],
     demo: "https://web-desa-lidi-9kka.vercel.app/",
@@ -64,7 +64,7 @@ const projects: Project[] = [
     title: "Website Absensi",
     shortDescription: "Website agensi kreatif dengan efek 3D",
     fullDescription:
-      "Website agensi kreatif yang memukau secara visual yang mendorong batas desain web dengan efek 3D imersif dan animasi yang mengalir. Memanfaatkan Three.js untuk rendering WebGL dan GSAP untuk animasi scroll yang terkoreografi, situs ini memiliki showcase produk 3D interaktif, bagian storytelling parallax, dan pengalaman kursor kustom. Bahasa desain memadukan minimalisme dengan pilihan tipografi yang berani dan transisi halaman yang halus.",
+      "Website Absensi merupakan sistem berbasis web yang digunakan untuk mencatat dan mengelola kehadiran karyawan atau mahasiswa secara digital, sehingga proses monitoring menjadi lebih efektif dan akurat. Sistem ini dirancang dengan fitur-fitur seperti pencatatan waktu masuk dan keluar, laporan kehadiran, serta integrasi dengan perangkat absensi fisik untuk memastikan data yang akurat dan real-time. Dengan tampilan yang user-friendly, website ini memudahkan pengguna dalam mengelola absensi mereka serta memberikan kemudahan bagi administrator dalam memantau kehadiran secara efisien.",
     image: "/webabsen.png",
     tags: ["Full Stack"],
     demo: "https://absen-pegawai-pied.vercel.app/",
@@ -75,7 +75,7 @@ const projects: Project[] = [
     title: "Website Kas",
     shortDescription: "Website agensi kreatif dengan efek 3D",
     fullDescription:
-      "Website agensi kreatif yang memukau secara visual yang mendorong batas desain web dengan efek 3D imersif dan animasi yang mengalir. Memanfaatkan Three.js untuk rendering WebGL dan GSAP untuk animasi scroll yang terkoreografi, situs ini memiliki showcase produk 3D interaktif, bagian storytelling parallax, dan pengalaman kursor kustom. Bahasa desain memadukan minimalisme dengan pilihan tipografi yang berani dan transisi halaman yang halus.",
+      "Website ini dikembangkan dengan fokus pada desain yang responsif, pengalaman pengguna yang optimal, serta penyajian informasi yang jelas dan menarik. Dengan menggunakan teknologi web modern, situs ini bertujuan untuk memberikan pengalaman yang menyenangkan bagi pengunjung sekaligus menyampaikan pesan dan nilai-nilai yang ingin disampaikan oleh agensi kreatif tersebut. Fitur-fitur interaktif dan konten yang relevan dirancang untuk meningkatkan keterlibatan pengguna, sehingga menciptakan hubungan yang lebih kuat antara agensi dan audiensnya. Website ini juga dioptimalkan untuk performa yang cepat dan aksesibilitas yang baik, memastikan bahwa semua pengunjung dapat menikmati pengalaman yang lancar dan menyenangkan saat menjelajahi situs ini.",
     image: "/kasdesa.png",
     tags: ["Full Stack"],
     demo: "https://kasdesalidi.vercel.app/",

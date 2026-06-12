@@ -15,11 +15,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Paskalis Didianus Jeharus — Creative Developer & Designer",
-  description: "Premium portfolio of Paskalis Didianus Jeharus — Full-Stack Developer, UI/UX Designer, and Creative Technologist crafting digital experiences that inspire.",
-  keywords: ["portfolio", "developer", "designer", "creative", "full-stack", "UI/UX", "web development"],
+  description:
+    "Premium portfolio of Paskalis Didianus Jeharus — Full-Stack Developer, UI/UX Designer, and Creative Technologist crafting digital experiences that inspire.",
+  keywords: [
+    "portfolio",
+    "developer",
+    "designer",
+    "creative",
+    "full-stack",
+    "UI/UX",
+    "web development",
+  ],
   authors: [{ name: "Paskalis Didianus Jeharus" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/profil4.png",
   },
   openGraph: {
     title: "Paskalis Didianus Jeharus — Creative Developer & Designer",

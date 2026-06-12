@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { FaWhatsapp, FaFacebook } from "react-icons/fa";
 import { motion } from "framer-motion";
 import {
   Github,
@@ -227,12 +228,24 @@ function ProfileImage() {
       >
         {/* Animated glow ring */}
         <div
-          className="absolute -inset-1 rounded-2xl opacity-70 blur-md transition-opacity duration-500 group-hover:opacity-100"
+          className="absolute inset-0 rounded-full"
           style={{
-            background:
-              "linear-gradient(135deg, #00f5d4, #a855f7, #f472b6, #00f5d4)",
-            backgroundSize: "300% 300%",
-            animation: "gradient-rotate 4s ease infinite",
+            border: "3px solid #00f5d4",
+            boxShadow: `
+      0 0 20px #00f5d4,
+      0 0 40px #00f5d4,
+      0 0 80px #00f5d4
+    `,
+          }}
+        />
+
+        <div
+          className="absolute inset-6 rounded-full border border-cyan-400/40"
+          style={{
+            boxShadow: `
+      0 0 25px rgba(0,245,212,0.4),
+      0 0 60px rgba(0,245,212,0.3)
+    `,
           }}
         />
 
@@ -251,16 +264,16 @@ function ProfileImage() {
         />
 
         {/* Image container */}
-        <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[360px] lg:h-[360px] rounded-2xl overflow-hidden border border-white/10">
+        <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] rounded-full overflow-visible">
           <Image
-            src="/profile.png"
-            alt="Paskalis Didianus Jeharus - Full-Stack Developer & Creative Designer"
+            src="/profil3.png"
+            alt="Paskalis Didianus Jeharus"
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            className="object-contain transition-transform duration-700 group-hover:scale-105"
             priority
           />
           {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050510]/40 via-transparent to-transparent" />
+          {/* <div className="absolute inset-0 bg-gradient-to-t from-[#050510]/40 via-transparent to-transparent" /> */}
         </div>
 
         {/* Corner decorations */}
@@ -550,15 +563,16 @@ export default function HeroSection() {
                 delay={1.5}
               />
               <SocialLink
-                href="https://linkedin.com"
-                icon={Linkedin}
-                label="LinkedIn"
+                href="https://facebook.com/Didi Putra"
+                icon={FaFacebook}
+                label="Facebook"
                 delay={1.6}
               />
+
               <SocialLink
-                href="https://twitter.com"
-                icon={Twitter}
-                label="Twitter"
+                href="https://wa.me/085773617907"
+                icon={FaWhatsapp}
+                label="WhatsApp"
                 delay={1.7}
               />
             </motion.div>
